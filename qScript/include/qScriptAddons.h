@@ -34,14 +34,15 @@
 #ifndef _qScriptAddons_h
 #define _qScriptAddons_h
 
-#include "qscriptlib_addons/contextmgr/contextmgr.h"
-#include "qscriptlib_addons/scriptany/scriptany.h"
-#include "qscriptlib_addons/scriptarray/scriptarray.h"
-#include "qscriptlib_addons/scriptbuilder/scriptbuilder.h"
-#include "qscriptlib_addons/scriptdictionary/scriptdictionary.h"
-#include "qscriptlib_addons/scriptfile/scriptfile.h"
-#include "qscriptlib_addons/scripthelper/scripthelper.h"
-#include "qscriptlib_addons/scriptmath/scriptmath.h"
-#include "qscriptlib_addons/scriptmath3d/scriptmath3d.h"
-#include "qscriptlib_addons/scriptstring/scriptstring.h"
+#include "../add_ons/contextmgr/contextmgr.h"
+#include "../add_ons/scriptany/scriptany.h"
+#include "../add_ons/scriptarray/scriptarray.h"
+#include "../add_ons/scriptbuilder/scriptbuilder.h"
+#include "../add_ons/scriptdictionary/scriptdictionary.h"
+#include "../add_ons/scriptfile/scriptfile.h"
+#include "../add_ons/scripthelper/scripthelper.h"
+#include "../add_ons/scriptmath/scriptmath.h"
+#include "../add_ons/scriptmath3d/scriptmath3d.h"
+#include "../add_ons/scriptstring/scriptstring.h"
+
 #endif

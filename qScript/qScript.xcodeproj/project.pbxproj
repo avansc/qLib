@@ -6,7 +6,72 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		0190CB23138DD8E500115714 /* aswrappedcall.h in Headers */ = {isa = PBXBuildFile; fileRef = 0190CAF3138DD8E500115714 /* aswrappedcall.h */; };
+		0190CB25138DD8E500115714 /* angelscript_c.h in Headers */ = {isa = PBXBuildFile; fileRef = 0190CAF9138DD8E500115714 /* angelscript_c.h */; };
+		0190CB28138DD8E500115714 /* contextmgr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0190CB02138DD8E500115714 /* contextmgr.cpp */; };
+		0190CB29138DD8E500115714 /* contextmgr.h in Headers */ = {isa = PBXBuildFile; fileRef = 0190CB03138DD8E500115714 /* contextmgr.h */; };
+		0190CB2A138DD8E500115714 /* scriptany.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0190CB05138DD8E500115714 /* scriptany.cpp */; };
+		0190CB2B138DD8E500115714 /* scriptany.h in Headers */ = {isa = PBXBuildFile; fileRef = 0190CB06138DD8E500115714 /* scriptany.h */; };
+		0190CB2C138DD8E500115714 /* scriptarray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0190CB08138DD8E500115714 /* scriptarray.cpp */; };
+		0190CB2D138DD8E500115714 /* scriptarray.h in Headers */ = {isa = PBXBuildFile; fileRef = 0190CB09138DD8E500115714 /* scriptarray.h */; };
+		0190CB2E138DD8E500115714 /* scriptbuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0190CB0B138DD8E500115714 /* scriptbuilder.cpp */; };
+		0190CB2F138DD8E500115714 /* scriptbuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 0190CB0C138DD8E500115714 /* scriptbuilder.h */; };
+		0190CB30138DD8E500115714 /* scriptdictionary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0190CB0E138DD8E500115714 /* scriptdictionary.cpp */; };
+		0190CB31138DD8E500115714 /* scriptdictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 0190CB0F138DD8E500115714 /* scriptdictionary.h */; };
+		0190CB32138DD8E500115714 /* scriptfile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0190CB11138DD8E500115714 /* scriptfile.cpp */; };
+		0190CB33138DD8E500115714 /* scriptfile.h in Headers */ = {isa = PBXBuildFile; fileRef = 0190CB12138DD8E500115714 /* scriptfile.h */; };
+		0190CB34138DD8E500115714 /* scripthelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0190CB14138DD8E500115714 /* scripthelper.cpp */; };
+		0190CB35138DD8E500115714 /* scripthelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 0190CB15138DD8E500115714 /* scripthelper.h */; };
+		0190CB36138DD8E500115714 /* scriptmath.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0190CB17138DD8E500115714 /* scriptmath.cpp */; };
+		0190CB37138DD8E500115714 /* scriptmath.h in Headers */ = {isa = PBXBuildFile; fileRef = 0190CB18138DD8E500115714 /* scriptmath.h */; };
+		0190CB38138DD8E500115714 /* scriptmath3d.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0190CB1A138DD8E500115714 /* scriptmath3d.cpp */; };
+		0190CB39138DD8E500115714 /* scriptmath3d.h in Headers */ = {isa = PBXBuildFile; fileRef = 0190CB1B138DD8E500115714 /* scriptmath3d.h */; };
+		0190CB3A138DD8E500115714 /* scriptstdstring.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0190CB1D138DD8E500115714 /* scriptstdstring.cpp */; };
+		0190CB3B138DD8E500115714 /* scriptstdstring.h in Headers */ = {isa = PBXBuildFile; fileRef = 0190CB1E138DD8E500115714 /* scriptstdstring.h */; };
+		0190CB3C138DD8E500115714 /* scriptstring.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0190CB20138DD8E500115714 /* scriptstring.cpp */; };
+		0190CB3D138DD8E500115714 /* scriptstring.h in Headers */ = {isa = PBXBuildFile; fileRef = 0190CB21138DD8E500115714 /* scriptstring.h */; };
+		0190CB3E138DD8E500115714 /* scriptstring_utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0190CB22138DD8E500115714 /* scriptstring_utils.cpp */; };
+		0190CB3F138DD91400115714 /* qScriptEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01B8F3BF138DD6F8007AA93A /* qScriptEngine.cpp */; };
+		0190CB40138DD91400115714 /* qScriptExec.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01B8F3C0138DD6F8007AA93A /* qScriptExec.cpp */; };
+		0190CB41138DD91400115714 /* qScriptLibrary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01B8F3C1138DD6F8007AA93A /* qScriptLibrary.cpp */; };
+		0190CB42138DD91400115714 /* qScriptModule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01B8F3C2138DD6F8007AA93A /* qScriptModule.cpp */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		0190CAEB138DD77000115714 /* libqscriptlib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libqscriptlib.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		0190CAF3138DD8E500115714 /* aswrappedcall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aswrappedcall.h; sourceTree = "<group>"; };
+		0190CAF5138DD8E500115714 /* generateheader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = generateheader.cpp; sourceTree = "<group>"; };
+		0190CAF6138DD8E500115714 /* generator.dsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = generator.dsp; sourceTree = "<group>"; };
+		0190CAF7138DD8E500115714 /* generator.dsw */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = generator.dsw; sourceTree = "<group>"; };
+		0190CAF9138DD8E500115714 /* angelscript_c.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = angelscript_c.h; sourceTree = "<group>"; };
+		0190CAFA138DD8E500115714 /* as_c.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = as_c.cpp; sourceTree = "<group>"; };
+		0190CAFB138DD8E500115714 /* dllmain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dllmain.cpp; sourceTree = "<group>"; };
+		0190CAFF138DD8E500115714 /* msvc6.dsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = msvc6.dsp; sourceTree = "<group>"; };
+		0190CB00138DD8E500115714 /* msvc6.dsw */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = msvc6.dsw; sourceTree = "<group>"; };
+		0190CB02138DD8E500115714 /* contextmgr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = contextmgr.cpp; sourceTree = "<group>"; };
+		0190CB03138DD8E500115714 /* contextmgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = contextmgr.h; sourceTree = "<group>"; };
+		0190CB05138DD8E500115714 /* scriptany.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = scriptany.cpp; sourceTree = "<group>"; };
+		0190CB06138DD8E500115714 /* scriptany.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scriptany.h; sourceTree = "<group>"; };
+		0190CB08138DD8E500115714 /* scriptarray.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = scriptarray.cpp; sourceTree = "<group>"; };
+		0190CB09138DD8E500115714 /* scriptarray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scriptarray.h; sourceTree = "<group>"; };
+		0190CB0B138DD8E500115714 /* scriptbuilder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = scriptbuilder.cpp; sourceTree = "<group>"; };
+		0190CB0C138DD8E500115714 /* scriptbuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scriptbuilder.h; sourceTree = "<group>"; };
+		0190CB0E138DD8E500115714 /* scriptdictionary.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = scriptdictionary.cpp; sourceTree = "<group>"; };
+		0190CB0F138DD8E500115714 /* scriptdictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scriptdictionary.h; sourceTree = "<group>"; };
+		0190CB11138DD8E500115714 /* scriptfile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = scriptfile.cpp; sourceTree = "<group>"; };
+		0190CB12138DD8E500115714 /* scriptfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scriptfile.h; sourceTree = "<group>"; };
+		0190CB14138DD8E500115714 /* scripthelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = scripthelper.cpp; sourceTree = "<group>"; };
+		0190CB15138DD8E500115714 /* scripthelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scripthelper.h; sourceTree = "<group>"; };
+		0190CB17138DD8E500115714 /* scriptmath.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = scriptmath.cpp; sourceTree = "<group>"; };
+		0190CB18138DD8E500115714 /* scriptmath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scriptmath.h; sourceTree = "<group>"; };
+		0190CB1A138DD8E500115714 /* scriptmath3d.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = scriptmath3d.cpp; sourceTree = "<group>"; };
+		0190CB1B138DD8E500115714 /* scriptmath3d.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scriptmath3d.h; sourceTree = "<group>"; };
+		0190CB1D138DD8E500115714 /* scriptstdstring.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = scriptstdstring.cpp; sourceTree = "<group>"; };
+		0190CB1E138DD8E500115714 /* scriptstdstring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scriptstdstring.h; sourceTree = "<group>"; };
+		0190CB20138DD8E500115714 /* scriptstring.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = scriptstring.cpp; sourceTree = "<group>"; };
+		0190CB21138DD8E500115714 /* scriptstring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scriptstring.h; sourceTree = "<group>"; };
+		0190CB22138DD8E500115714 /* scriptstring_utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = scriptstring_utils.cpp; sourceTree = "<group>"; };
 		01B8F3B7138DD6F8007AA93A /* qScriptAddons.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = qScriptAddons.h; sourceTree = "<group>"; };
 		01B8F3B8138DD6F8007AA93A /* qScriptEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = qScriptEngine.h; sourceTree = "<group>"; };
 		01B8F3B9138DD6F8007AA93A /* qScriptExec.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = qScriptExec.h; sourceTree = "<group>"; };
@@ -20,12 +85,207 @@
 		01B8F3C2138DD6F8007AA93A /* qScriptModule.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = qScriptModule.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFrameworksBuildPhase section */
+		0190CAE8138DD77000115714 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
 /* Begin PBXGroup section */
+		0190CAEC138DD77000115714 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0190CAEB138DD77000115714 /* libqscriptlib.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0190CAF1138DD8E500115714 /* add_ons */ = {
+			isa = PBXGroup;
+			children = (
+				0190CAF2138DD8E500115714 /* autowrapper */,
+				0190CAF8138DD8E500115714 /* clib */,
+				0190CB01138DD8E500115714 /* contextmgr */,
+				0190CB04138DD8E500115714 /* scriptany */,
+				0190CB07138DD8E500115714 /* scriptarray */,
+				0190CB0A138DD8E500115714 /* scriptbuilder */,
+				0190CB0D138DD8E500115714 /* scriptdictionary */,
+				0190CB10138DD8E500115714 /* scriptfile */,
+				0190CB13138DD8E500115714 /* scripthelper */,
+				0190CB16138DD8E500115714 /* scriptmath */,
+				0190CB19138DD8E500115714 /* scriptmath3d */,
+				0190CB1C138DD8E500115714 /* scriptstdstring */,
+				0190CB1F138DD8E500115714 /* scriptstring */,
+			);
+			path = add_ons;
+			sourceTree = "<group>";
+		};
+		0190CAF2138DD8E500115714 /* autowrapper */ = {
+			isa = PBXGroup;
+			children = (
+				0190CAF3138DD8E500115714 /* aswrappedcall.h */,
+				0190CAF4138DD8E500115714 /* generator */,
+			);
+			path = autowrapper;
+			sourceTree = "<group>";
+		};
+		0190CAF4138DD8E500115714 /* generator */ = {
+			isa = PBXGroup;
+			children = (
+				0190CAF5138DD8E500115714 /* generateheader.cpp */,
+				0190CAF6138DD8E500115714 /* generator.dsp */,
+				0190CAF7138DD8E500115714 /* generator.dsw */,
+			);
+			path = generator;
+			sourceTree = "<group>";
+		};
+		0190CAF8138DD8E500115714 /* clib */ = {
+			isa = PBXGroup;
+			children = (
+				0190CAF9138DD8E500115714 /* angelscript_c.h */,
+				0190CAFA138DD8E500115714 /* as_c.cpp */,
+				0190CAFB138DD8E500115714 /* dllmain.cpp */,
+				0190CAFC138DD8E500115714 /* lib */,
+				0190CAFD138DD8E500115714 /* projects */,
+			);
+			path = clib;
+			sourceTree = "<group>";
+		};
+		0190CAFC138DD8E500115714 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		0190CAFD138DD8E500115714 /* projects */ = {
+			isa = PBXGroup;
+			children = (
+				0190CAFE138DD8E500115714 /* msvc6 */,
+			);
+			path = projects;
+			sourceTree = "<group>";
+		};
+		0190CAFE138DD8E500115714 /* msvc6 */ = {
+			isa = PBXGroup;
+			children = (
+				0190CAFF138DD8E500115714 /* msvc6.dsp */,
+				0190CB00138DD8E500115714 /* msvc6.dsw */,
+			);
+			path = msvc6;
+			sourceTree = "<group>";
+		};
+		0190CB01138DD8E500115714 /* contextmgr */ = {
+			isa = PBXGroup;
+			children = (
+				0190CB02138DD8E500115714 /* contextmgr.cpp */,
+				0190CB03138DD8E500115714 /* contextmgr.h */,
+			);
+			path = contextmgr;
+			sourceTree = "<group>";
+		};
+		0190CB04138DD8E500115714 /* scriptany */ = {
+			isa = PBXGroup;
+			children = (
+				0190CB05138DD8E500115714 /* scriptany.cpp */,
+				0190CB06138DD8E500115714 /* scriptany.h */,
+			);
+			path = scriptany;
+			sourceTree = "<group>";
+		};
+		0190CB07138DD8E500115714 /* scriptarray */ = {
+			isa = PBXGroup;
+			children = (
+				0190CB08138DD8E500115714 /* scriptarray.cpp */,
+				0190CB09138DD8E500115714 /* scriptarray.h */,
+			);
+			path = scriptarray;
+			sourceTree = "<group>";
+		};
+		0190CB0A138DD8E500115714 /* scriptbuilder */ = {
+			isa = PBXGroup;
+			children = (
+				0190CB0B138DD8E500115714 /* scriptbuilder.cpp */,
+				0190CB0C138DD8E500115714 /* scriptbuilder.h */,
+			);
+			path = scriptbuilder;
+			sourceTree = "<group>";
+		};
+		0190CB0D138DD8E500115714 /* scriptdictionary */ = {
+			isa = PBXGroup;
+			children = (
+				0190CB0E138DD8E500115714 /* scriptdictionary.cpp */,
+				0190CB0F138DD8E500115714 /* scriptdictionary.h */,
+			);
+			path = scriptdictionary;
+			sourceTree = "<group>";
+		};
+		0190CB10138DD8E500115714 /* scriptfile */ = {
+			isa = PBXGroup;
+			children = (
+				0190CB11138DD8E500115714 /* scriptfile.cpp */,
+				0190CB12138DD8E500115714 /* scriptfile.h */,
+			);
+			path = scriptfile;
+			sourceTree = "<group>";
+		};
+		0190CB13138DD8E500115714 /* scripthelper */ = {
+			isa = PBXGroup;
+			children = (
+				0190CB14138DD8E500115714 /* scripthelper.cpp */,
+				0190CB15138DD8E500115714 /* scripthelper.h */,
+			);
+			path = scripthelper;
+			sourceTree = "<group>";
+		};
+		0190CB16138DD8E500115714 /* scriptmath */ = {
+			isa = PBXGroup;
+			children = (
+				0190CB17138DD8E500115714 /* scriptmath.cpp */,
+				0190CB18138DD8E500115714 /* scriptmath.h */,
+			);
+			path = scriptmath;
+			sourceTree = "<group>";
+		};
+		0190CB19138DD8E500115714 /* scriptmath3d */ = {
+			isa = PBXGroup;
+			children = (
+				0190CB1A138DD8E500115714 /* scriptmath3d.cpp */,
+				0190CB1B138DD8E500115714 /* scriptmath3d.h */,
+			);
+			path = scriptmath3d;
+			sourceTree = "<group>";
+		};
+		0190CB1C138DD8E500115714 /* scriptstdstring */ = {
+			isa = PBXGroup;
+			children = (
+				0190CB1D138DD8E500115714 /* scriptstdstring.cpp */,
+				0190CB1E138DD8E500115714 /* scriptstdstring.h */,
+			);
+			path = scriptstdstring;
+			sourceTree = "<group>";
+		};
+		0190CB1F138DD8E500115714 /* scriptstring */ = {
+			isa = PBXGroup;
+			children = (
+				0190CB20138DD8E500115714 /* scriptstring.cpp */,
+				0190CB21138DD8E500115714 /* scriptstring.h */,
+				0190CB22138DD8E500115714 /* scriptstring_utils.cpp */,
+			);
+			path = scriptstring;
+			sourceTree = "<group>";
+		};
 		01B8F3AD138DD638007AA93A = {
 			isa = PBXGroup;
 			children = (
+				0190CAF1138DD8E500115714 /* add_ons */,
 				01B8F3B6138DD6F8007AA93A /* include */,
 				01B8F3BE138DD6F8007AA93A /* src */,
+				0190CAEC138DD77000115714 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +316,49 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		0190CAE9138DD77000115714 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0190CB23138DD8E500115714 /* aswrappedcall.h in Headers */,
+				0190CB25138DD8E500115714 /* angelscript_c.h in Headers */,
+				0190CB29138DD8E500115714 /* contextmgr.h in Headers */,
+				0190CB2B138DD8E500115714 /* scriptany.h in Headers */,
+				0190CB2D138DD8E500115714 /* scriptarray.h in Headers */,
+				0190CB2F138DD8E500115714 /* scriptbuilder.h in Headers */,
+				0190CB31138DD8E500115714 /* scriptdictionary.h in Headers */,
+				0190CB33138DD8E500115714 /* scriptfile.h in Headers */,
+				0190CB35138DD8E500115714 /* scripthelper.h in Headers */,
+				0190CB37138DD8E500115714 /* scriptmath.h in Headers */,
+				0190CB39138DD8E500115714 /* scriptmath3d.h in Headers */,
+				0190CB3B138DD8E500115714 /* scriptstdstring.h in Headers */,
+				0190CB3D138DD8E500115714 /* scriptstring.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0190CAEA138DD77000115714 /* qscriptlib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0190CAEF138DD77000115714 /* Build configuration list for PBXNativeTarget "qscriptlib" */;
+			buildPhases = (
+				0190CAE7138DD77000115714 /* Sources */,
+				0190CAE8138DD77000115714 /* Frameworks */,
+				0190CAE9138DD77000115714 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = qscriptlib;
+			productName = qscriptlib;
+			productReference = 0190CAEB138DD77000115714 /* libqscriptlib.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
 /* Begin PBXProject section */
 		01B8F3AF138DD638007AA93A /* Project object */ = {
 			isa = PBXProject;
@@ -67,14 +370,94 @@
 				en,
 			);
 			mainGroup = 01B8F3AD138DD638007AA93A;
+			productRefGroup = 0190CAEC138DD77000115714 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				0190CAEA138DD77000115714 /* qscriptlib */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXSourcesBuildPhase section */
+		0190CAE7138DD77000115714 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0190CB3F138DD91400115714 /* qScriptEngine.cpp in Sources */,
+				0190CB40138DD91400115714 /* qScriptExec.cpp in Sources */,
+				0190CB41138DD91400115714 /* qScriptLibrary.cpp in Sources */,
+				0190CB42138DD91400115714 /* qScriptModule.cpp in Sources */,
+				0190CB28138DD8E500115714 /* contextmgr.cpp in Sources */,
+				0190CB2A138DD8E500115714 /* scriptany.cpp in Sources */,
+				0190CB2C138DD8E500115714 /* scriptarray.cpp in Sources */,
+				0190CB2E138DD8E500115714 /* scriptbuilder.cpp in Sources */,
+				0190CB30138DD8E500115714 /* scriptdictionary.cpp in Sources */,
+				0190CB32138DD8E500115714 /* scriptfile.cpp in Sources */,
+				0190CB34138DD8E500115714 /* scripthelper.cpp in Sources */,
+				0190CB36138DD8E500115714 /* scriptmath.cpp in Sources */,
+				0190CB38138DD8E500115714 /* scriptmath3d.cpp in Sources */,
+				0190CB3A138DD8E500115714 /* scriptstdstring.cpp in Sources */,
+				0190CB3C138DD8E500115714 /* scriptstring.cpp in Sources */,
+				0190CB3E138DD8E500115714 /* scriptstring_utils.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
 /* Begin XCBuildConfiguration section */
+		0190CAED138DD77000115714 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				EXECUTABLE_PREFIX = lib;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = 4.2;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/local/include/;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib/;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-langelscript";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				VALID_ARCHS = i386;
+			};
+			name = Debug;
+		};
+		0190CAEE138DD77000115714 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EXECUTABLE_PREFIX = lib;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = 4.2;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/local/include/;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib/;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				OTHER_LDFLAGS = "-langelscript";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				VALID_ARCHS = i386;
+			};
+			name = Release;
+		};
 		01B8F3B4138DD638007AA93A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -90,6 +473,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0190CAEF138DD77000115714 /* Build configuration list for PBXNativeTarget "qscriptlib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0190CAED138DD77000115714 /* Debug */,
+				0190CAEE138DD77000115714 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		01B8F3B2138DD638007AA93A /* Build configuration list for PBXProject "qScript" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

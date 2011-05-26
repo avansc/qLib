@@ -47,7 +47,7 @@
 #include "../add_on/scriptarray/scriptarray.h"
 #include "../add_on/scriptdictionary/scriptdictionary.h"*/
 
-namespace qLib
+/*namespace qLib
 {
 	namespace Script
 	{
@@ -108,6 +108,9 @@ printf("Global property '%s' is already defined.\n", DECLARATION);							\
 #define REGISTER_TO_LIBRARY(ENGINE, NAME, FUNCTION)		\
 ENGINE->getScriptLibrary()->add(NAME, FUNCTION);		\
 
+ */
+
 /*#include "qScriptLib.h"*/
+
 
 #endif

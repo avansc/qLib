@@ -37,17 +37,14 @@
 #include <string>
 #include <map>
 
-//#include "qScriptLibDeps.h"
-//#include "qScriptEngine.h"
 #include "qScriptEngine.h"
 
 namespace qLib
 {
 	namespace Script
 	{
-		class qScriptLibrary;
-		
 		typedef void(*pREG_FUNC)(qScriptEngine*);
+		//class iScriptable;
 		
 		class qScriptLibrary : public iScriptable<qScriptLibrary>
 		{

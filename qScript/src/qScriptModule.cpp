@@ -34,7 +34,6 @@
 #include "qScriptModule.h"
 
 #include <stdio.h>
-
 #include <angelscript.h>
 
 using namespace qLib::Script;
