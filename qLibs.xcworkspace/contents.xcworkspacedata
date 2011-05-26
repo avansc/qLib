@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:qUtil/qUtil.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:qScript/qScript.xcodeproj">
    </FileRef>
 </Workspace>
