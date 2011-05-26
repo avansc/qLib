@@ -6,11 +6,52 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXFileReference section */
+		01B8F3B7138DD6F8007AA93A /* qScriptAddons.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = qScriptAddons.h; sourceTree = "<group>"; };
+		01B8F3B8138DD6F8007AA93A /* qScriptEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = qScriptEngine.h; sourceTree = "<group>"; };
+		01B8F3B9138DD6F8007AA93A /* qScriptExec.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = qScriptExec.h; sourceTree = "<group>"; };
+		01B8F3BA138DD6F8007AA93A /* qScriptLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = qScriptLib.h; sourceTree = "<group>"; };
+		01B8F3BB138DD6F8007AA93A /* qScriptLibDeps.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = qScriptLibDeps.h; sourceTree = "<group>"; };
+		01B8F3BC138DD6F8007AA93A /* qScriptLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = qScriptLibrary.h; sourceTree = "<group>"; };
+		01B8F3BD138DD6F8007AA93A /* qScriptModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = qScriptModule.h; sourceTree = "<group>"; };
+		01B8F3BF138DD6F8007AA93A /* qScriptEngine.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = qScriptEngine.cpp; sourceTree = "<group>"; };
+		01B8F3C0138DD6F8007AA93A /* qScriptExec.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = qScriptExec.cpp; sourceTree = "<group>"; };
+		01B8F3C1138DD6F8007AA93A /* qScriptLibrary.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = qScriptLibrary.cpp; sourceTree = "<group>"; };
+		01B8F3C2138DD6F8007AA93A /* qScriptModule.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = qScriptModule.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
 /* Begin PBXGroup section */
 		01B8F3AD138DD638007AA93A = {
 			isa = PBXGroup;
 			children = (
+				01B8F3B6138DD6F8007AA93A /* include */,
+				01B8F3BE138DD6F8007AA93A /* src */,
 			);
+			sourceTree = "<group>";
+		};
+		01B8F3B6138DD6F8007AA93A /* include */ = {
+			isa = PBXGroup;
+			children = (
+				01B8F3B7138DD6F8007AA93A /* qScriptAddons.h */,
+				01B8F3B8138DD6F8007AA93A /* qScriptEngine.h */,
+				01B8F3B9138DD6F8007AA93A /* qScriptExec.h */,
+				01B8F3BA138DD6F8007AA93A /* qScriptLib.h */,
+				01B8F3BB138DD6F8007AA93A /* qScriptLibDeps.h */,
+				01B8F3BC138DD6F8007AA93A /* qScriptLibrary.h */,
+				01B8F3BD138DD6F8007AA93A /* qScriptModule.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		01B8F3BE138DD6F8007AA93A /* src */ = {
+			isa = PBXGroup;
+			children = (
+				01B8F3BF138DD6F8007AA93A /* qScriptEngine.cpp */,
+				01B8F3C0138DD6F8007AA93A /* qScriptExec.cpp */,
+				01B8F3C1138DD6F8007AA93A /* qScriptLibrary.cpp */,
+				01B8F3C2138DD6F8007AA93A /* qScriptModule.cpp */,
+			);
+			path = src;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
