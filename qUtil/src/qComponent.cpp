@@ -35,51 +35,60 @@
 
 #include <stdlib.h>
 
-using namespace qLib::Util;
-
-qComponent::qComponent()
-:	root(NULL)
+namespace qLib
 {
-}
+	namespace Util
+	{
+		qComponent::qComponent()
+		:	root(NULL)
+		{
+		}
 
-qComponent::qComponent(qComponent *root)
-:	root(root)
-{
-}
+		qComponent::qComponent(qComponent *root)
+		:	root(root)
+		{
+		}
 
-qComponent::~qComponent()
-{
-	std::map<std::string, qComponent* >::iterator it;
-	
-	for(it = this->comps.begin();it != comps.end();it++)
-		delete it->second;
-}
+		qComponent::~qComponent()
+		{
+			std::map<std::string, qComponent* >::iterator it;
+			
+			for(it = this->comps.begin();it != comps.end();it++)
+				delete it->second;
+		}
+		
+		void qComponent::setRoot(qComponent *_root)
+		{
+			this->root = _root;
+		}
 
-qComponent *qComponent::getRoot()
-{
-	return this->root;
-}
+		qComponent *qComponent::getRoot()
+		{
+			return this->root;
+		}
 
-qComponent *qComponent::getComp(std::string comp)
-{
-	return this->comps[comp];
-}
+		qComponent *qComponent::getComp(std::string comp)
+		{
+			return this->comps[comp];
+		}
 
-bool qComponent::addComp(std::string comp, qComponent *it)
-{
-	it->root = this;
-	this->comps[comp] = it;
-	return true;
-}
+		bool qComponent::addComp(std::string comp, qComponent *it)
+		{
+			it->root = this;
+			this->comps[comp] = it;
+			return true;
+		}
 
-void qComponent::REGISTER_SCRIPTABLES(qScriptEngine *engine)
-{
-	//engine->RegisterScriptable<qEntity>();
-	REGISTER_CLASS(engine, "qComponent", qComponent);
-	
-	
-	int r = engine->getEngine()->RegisterObjectMethod("qComponent", "qComponent &opAssign(const qComponent &in)", asMETHODPR(qComponent, operator =, (const qComponent&), qComponent&), asCALL_THISCALL); assert( r >= 0 );
-	
-	REGISTER_METHOD(engine, "qComponent", qComponent, "bool addComp(string &comp, qComponent &it)", addComp);
-	REGISTER_METHOD(engine, "qComponent", qComponent, "qComponent &getComp(string &comp)", getComp);
+		void qComponent::REGISTER_SCRIPTABLES(qScriptEngine *engine)
+		{
+			//engine->RegisterScriptable<qEntity>();
+			REGISTER_CLASS(engine, "qComponent", qComponent);
+			
+			
+			int r = engine->getEngine()->RegisterObjectMethod("qComponent", "qComponent &opAssign(const qComponent &in)", asMETHODPR(qComponent, operator =, (const qComponent&), qComponent&), asCALL_THISCALL); assert( r >= 0 );
+			
+			REGISTER_METHOD(engine, "qComponent", qComponent, "bool addComp(string &comp, qComponent &it)", addComp);
+			REGISTER_METHOD(engine, "qComponent", qComponent, "qComponent &getComp(string &comp)", getComp);
+		}
+	}
 }

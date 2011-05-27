@@ -1,6 +1,6 @@
 /*
- *  qUtilLib
- *  qObject.cpp
+ *  qEventLib
+ *  qEventRegistry.h
  *
  *	Copyright (c) 2001, AVS
  *	All rights reserved.
@@ -31,26 +31,58 @@
  *	SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "qObject.h"
+#ifndef _qEventRegistry_h
+#define _qEventRegistry_h
 
+#include <map>
+#include <vector>
+
+#include "qComponent.h"
+
+#include "qEvent.h"
+
+using namespace std;
 
 namespace qLib
 {
 	namespace Util
 	{
-		qObject::qObject()
-		:	_type(qObjectDefault)
-		{
-		}
+		class qComponent;
+	}
+	
+	namespace Event
+	{
+		class qEventListener;
+		class qEventHandler;
+		//typedef multimap<unsigned int , multimap<unsigned int, qEventListener*> > listener_multimap;
 
-		qObject::qObject(qObjectType type)
-		:	_type(type)
-		{
-		}
+		typedef multimap<unsigned int, qEventListener*> listener_multimap;
+		typedef multimap<unsigned int, qEventListener*> monitor_multimap;
+		typedef multimap<unsigned int, multimap<unsigned int, qEventListener*> >listener_multi_map;
 
-		void qObject::REGISTER_SCRIPTABLES(qScriptEngine *engine)
+		const unsigned int EVENT_BUFFER_MAX = 100;
+
+		class qEventRegistry
 		{
-			REGISTER_CLASS(engine, "qObject", qObject);
-		}
+		public:
+			qEventRegistry();
+			bool push_event(const qEvent &_evt);
+			
+			void process_events();
+			
+			bool register_pair(qEventListener *L, qEventHandler *H, qLib::Util::qComponent *comp);
+
+		private:
+			listener_multimap listeners;
+			listener_multi_map listener_map;
+			monitor_multimap monitor_map;
+			//multimap<unsigned int, qEventListener*> listeners;
+			vector<qEvent> event_queue;
+			qEvent event_buffer[EVENT_BUFFER_MAX];
+			unsigned int buffer_count;
+			
+		};
 	}
 }
+
+#endif

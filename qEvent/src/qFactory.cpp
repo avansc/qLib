@@ -1,6 +1,6 @@
 /*
- *  qUtilLib
- *  qObject.cpp
+ *  qEventLib
+ *  qFactory.cpp
  *
  *	Copyright (c) 2001, AVS
  *	All rights reserved.
@@ -31,26 +31,4 @@
  *	SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "qObject.h"
-
-
-namespace qLib
-{
-	namespace Util
-	{
-		qObject::qObject()
-		:	_type(qObjectDefault)
-		{
-		}
-
-		qObject::qObject(qObjectType type)
-		:	_type(type)
-		{
-		}
-
-		void qObject::REGISTER_SCRIPTABLES(qScriptEngine *engine)
-		{
-			REGISTER_CLASS(engine, "qObject", qObject);
-		}
-	}
-}
+#include "qFactory.h"

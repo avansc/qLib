@@ -1,6 +1,6 @@
 /*
- *  qUtilLib
- *  qObject.cpp
+ *  qEventLib
+ *  qEvent.cpp
  *
  *	Copyright (c) 2001, AVS
  *	All rights reserved.
@@ -31,26 +31,49 @@
  *	SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "qObject.h"
-
+#include <stdio.h>
+#include "qEvent.h"
 
 namespace qLib
 {
-	namespace Util
+	namespace Event
 	{
-		qObject::qObject()
-		:	_type(qObjectDefault)
+		qEvent::qEvent()
 		{
 		}
 
-		qObject::qObject(qObjectType type)
-		:	_type(type)
+		qEvent::qEvent(unsigned int _param1, unsigned int _param2, event_type _type)
 		{
+			this->data.type = _type;
+			this->data.key = EVENT_DEFAULT;
+			
+			switch (_type)
+			{
+				case EVENT_KEY:
+				{
+					this->data.event_data.key_d.key = _param1;
+					this->data.event_data.key_d.state = _param2;
+					break;
+				}
+				case EVENT_MOUSE:
+				{
+					this->data.event_data.mouse_d.x = _param1;
+					this->data.event_data.mouse_d.y = _param2;
+					break;
+				}
+				default:
+					break;
+			}
 		}
 
-		void qObject::REGISTER_SCRIPTABLES(qScriptEngine *engine)
+		event_type qEvent::type()
 		{
-			REGISTER_CLASS(engine, "qObject", qObject);
+			return this->data.type;
+		}
+
+		unsigned int qEvent::key()
+		{
+			return this->data.key;
 		}
 	}
 }

@@ -1,6 +1,6 @@
 /*
- *  qUtilLib
- *  qObject.cpp
+ *  qEventLib
+ *  qEventHandler.cpp
  *
  *	Copyright (c) 2001, AVS
  *	All rights reserved.
@@ -31,26 +31,74 @@
  *	SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "qObject.h"
-
+#include "qEventHandler.h"
+#include "qEvent.h"
 
 namespace qLib
 {
-	namespace Util
+	namespace Event
 	{
-		qObject::qObject()
-		:	_type(qObjectDefault)
+		qEventHandler::qEventHandler()
 		{
 		}
 
-		qObject::qObject(qObjectType type)
-		:	_type(type)
+		void qEventHandler::ON_EVENT(const qEvent &_evt)
 		{
-		}
-
-		void qObject::REGISTER_SCRIPTABLES(qScriptEngine *engine)
-		{
-			REGISTER_CLASS(engine, "qObject", qObject);
+			{
+			/*switch (_evt.data.type)
+			{
+				case EVENT_KEY :
+				{
+					switch (_evt.data.event_data.key_d.state)
+					{
+						case KEY_DOWN :
+						{
+							switch(_evt.data.event_data.key_d.key)
+							{
+								case 'a' :
+								{
+									((qEntity*)this->getRoot())->x -= 0.1;
+									break;
+								}
+								case 'd' :
+								{
+									((qEntity*)this->getRoot())->x += 0.1;
+									break;
+								}
+								case 'w' :
+								{
+									((qEntity*)this->getRoot())->y += 0.1;
+									break;
+								}
+								case 's' :
+								{
+									((qEntity*)this->getRoot())->y -= 0.1;
+									break;
+								}
+							}
+							break;
+						}
+						case KEY_PRESSED :
+						{
+							printf("KEY PRESSED : %c\n", _evt.data.event_data.key_d.key);
+							break;
+						}
+						case KEY_RELEASED :
+						{
+							printf("KEY RELEASED : %c\n", _evt.data.event_data.key_d.key);
+							break;
+						}
+							
+						default:
+							break;
+					}
+				}
+					
+				default:
+					break;
+			}*/
+			//printf("default event handler\n");
+			}
 		}
 	}
 }

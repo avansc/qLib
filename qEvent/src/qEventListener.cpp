@@ -1,6 +1,6 @@
 /*
- *  qUtilLib
- *  qObject.cpp
+ *  qEventLib
+ *  qEventListener.cpp
  *
  *	Copyright (c) 2001, AVS
  *	All rights reserved.
@@ -31,26 +31,37 @@
  *	SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "qObject.h"
-
+#include "qEventListener.h"
+#include "qEventHandler.h"
+#include "qEvent.h"
 
 namespace qLib
 {
-	namespace Util
+	namespace Event
 	{
-		qObject::qObject()
-		:	_type(qObjectDefault)
+		qEventListener::qEventListener()
+		:	type(EVENT_DEFAULT),
+			key(EVENT_DEFAULT)
 		{
 		}
 
-		qObject::qObject(qObjectType type)
-		:	_type(type)
+		event_type qEventListener::listener_type()
 		{
+			return this->type;
 		}
 
-		void qObject::REGISTER_SCRIPTABLES(qScriptEngine *engine)
+		unsigned int qEventListener::listener_key()
 		{
-			REGISTER_CLASS(engine, "qObject", qObject);
+			return this->key;
+		}
+
+		void qEventListener::ON_EVENT(const qEvent &_evt)
+		{
+			qComponent *H = this->getRoot()->getComp("event_handler");
+			if(H)
+				((qEventHandler*)H)->ON_EVENT(_evt);
+			else
+				printf("NO EVENT HANDLER FOUND!\n");
 		}
 	}
 }

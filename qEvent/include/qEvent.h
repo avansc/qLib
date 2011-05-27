@@ -1,6 +1,6 @@
 /*
- *  qUtilLib
- *  qObject.cpp
+ *  qEventLib
+ *  qEvent.h
  *
  *	Copyright (c) 2001, AVS
  *	All rights reserved.
@@ -31,26 +31,87 @@
  *	SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "qObject.h"
-
+#ifndef _qEvent_h
+#define _qEvent_h
 
 namespace qLib
 {
-	namespace Util
+	namespace Event
 	{
-		qObject::qObject()
-		:	_type(qObjectDefault)
+		enum event_type
 		{
-		}
+			EVENT_DEFAULT = 0,
+			EVENT_KEY,
+			EVENT_MOUSE,
+			EVENT_GAME,
+			EVENT_USER,
+			EVENT_MONITOR
+		};
 
-		qObject::qObject(qObjectType type)
-		:	_type(type)
+		enum key_state
 		{
-		}
+			KEY_UP = 0,
+			KEY_PRESSED,
+			KEY_DOWN,
+			KEY_RELEASED
+		};
 
-		void qObject::REGISTER_SCRIPTABLES(qScriptEngine *engine)
+		struct key_data
 		{
-			REGISTER_CLASS(engine, "qObject", qObject);
-		}
+			unsigned int key;
+			unsigned int state;
+		};
+
+		struct mouse_data
+		{
+			float x;
+			float y;
+			float dx;
+			float dy;
+		};
+
+		struct default_data
+		{
+			void *data;
+		};
+
+		typedef struct event_data
+		{
+			event_type type;
+			unsigned int key;
+			union data
+			{
+				default_data default_d;
+				key_data key_d;
+				mouse_data mouse_d; 
+				default_data game_d;
+				default_data user_d;
+			};
+			data event_data;
+			
+		} event_data;
+
+		class qEvent
+		{
+		public:
+			qEvent();
+			qEvent(unsigned int _param1, unsigned int _param2, event_type _type);
+			event_type type();
+			unsigned int key();
+			
+			unsigned int get_key_code();
+			unsigned int get_key_state();
+			unsigned int get_mouse_x();
+			unsigned int get_mouse_y();
+			unsigned int get_mouse_dx();
+			unsigned int get_mouse_dy();
+			void *get_game_data();
+			void *get_user_data();
+			
+		//private:
+			event_data data;
+		};
 	}
 }
+
+#endif

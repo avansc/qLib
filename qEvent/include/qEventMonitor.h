@@ -1,6 +1,6 @@
 /*
- *  qUtilLib
- *  qObject.cpp
+ *  qEventLib
+ *  qEventMonitor.h
  *
  *	Copyright (c) 2001, AVS
  *	All rights reserved.
@@ -31,26 +31,27 @@
  *	SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "qObject.h"
+#ifndef _qEventMonitor_h
+#define	_qEventMonitor_h
 
+#include "qComponent.h"
+#include "qEventHandler.h"
+#include "qEventListener.h"
+#include "qEvent.h"
 
 namespace qLib
 {
-	namespace Util
+	namespace Event
 	{
-		qObject::qObject()
-		:	_type(qObjectDefault)
+		class qEventMonitor : public qEventListener
 		{
-		}
-
-		qObject::qObject(qObjectType type)
-		:	_type(type)
-		{
-		}
-
-		void qObject::REGISTER_SCRIPTABLES(qScriptEngine *engine)
-		{
-			REGISTER_CLASS(engine, "qObject", qObject);
-		}
+		public:
+			qEventMonitor();
+			virtual ~qEventMonitor(){};
+			
+		private:
+		};
 	}
 }
+
+#endif

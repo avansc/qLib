@@ -1,0 +1,270 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		01F39DD413903765004C3691 /* qEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 01F39DC513903765004C3691 /* qEvent.h */; };
+		01F39DD513903765004C3691 /* qEventHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 01F39DC613903765004C3691 /* qEventHandler.h */; };
+		01F39DD613903765004C3691 /* qEventListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 01F39DC713903765004C3691 /* qEventListener.h */; };
+		01F39DD713903765004C3691 /* qEventMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 01F39DC813903765004C3691 /* qEventMonitor.h */; };
+		01F39DD813903765004C3691 /* qEventRegistry.h in Headers */ = {isa = PBXBuildFile; fileRef = 01F39DC913903765004C3691 /* qEventRegistry.h */; };
+		01F39DD913903765004C3691 /* qFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 01F39DCA13903765004C3691 /* qFactory.h */; };
+		01F39DDA13903765004C3691 /* qKeyEventListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 01F39DCB13903765004C3691 /* qKeyEventListener.h */; };
+		01F39DDB13903765004C3691 /* qEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01F39DCD13903765004C3691 /* qEvent.cpp */; };
+		01F39DDC13903765004C3691 /* qEventHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01F39DCE13903765004C3691 /* qEventHandler.cpp */; };
+		01F39DDD13903765004C3691 /* qEventListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01F39DCF13903765004C3691 /* qEventListener.cpp */; };
+		01F39DDE13903765004C3691 /* qEventMonitor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01F39DD013903765004C3691 /* qEventMonitor.cpp */; };
+		01F39DDF13903765004C3691 /* qEventRegistry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01F39DD113903765004C3691 /* qEventRegistry.cpp */; };
+		01F39DE013903765004C3691 /* qFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01F39DD213903765004C3691 /* qFactory.cpp */; };
+		01F39DE113903765004C3691 /* qKeyEventListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01F39DD313903765004C3691 /* qKeyEventListener.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		01F39DBF1390363B004C3691 /* libqeventlib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libqeventlib.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		01F39DC513903765004C3691 /* qEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qEvent.h; sourceTree = "<group>"; };
+		01F39DC613903765004C3691 /* qEventHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qEventHandler.h; sourceTree = "<group>"; };
+		01F39DC713903765004C3691 /* qEventListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qEventListener.h; sourceTree = "<group>"; };
+		01F39DC813903765004C3691 /* qEventMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qEventMonitor.h; sourceTree = "<group>"; };
+		01F39DC913903765004C3691 /* qEventRegistry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qEventRegistry.h; sourceTree = "<group>"; };
+		01F39DCA13903765004C3691 /* qFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qFactory.h; sourceTree = "<group>"; };
+		01F39DCB13903765004C3691 /* qKeyEventListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qKeyEventListener.h; sourceTree = "<group>"; };
+		01F39DCD13903765004C3691 /* qEvent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = qEvent.cpp; sourceTree = "<group>"; };
+		01F39DCE13903765004C3691 /* qEventHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = qEventHandler.cpp; sourceTree = "<group>"; };
+		01F39DCF13903765004C3691 /* qEventListener.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = qEventListener.cpp; sourceTree = "<group>"; };
+		01F39DD013903765004C3691 /* qEventMonitor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = qEventMonitor.cpp; sourceTree = "<group>"; };
+		01F39DD113903765004C3691 /* qEventRegistry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = qEventRegistry.cpp; sourceTree = "<group>"; };
+		01F39DD213903765004C3691 /* qFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = qFactory.cpp; sourceTree = "<group>"; };
+		01F39DD313903765004C3691 /* qKeyEventListener.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = qKeyEventListener.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		01F39DBC1390363B004C3691 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		01F39DB213903585004C3691 = {
+			isa = PBXGroup;
+			children = (
+				01F39DC413903765004C3691 /* include */,
+				01F39DCC13903765004C3691 /* src */,
+				01F39DC01390363B004C3691 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		01F39DC01390363B004C3691 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				01F39DBF1390363B004C3691 /* libqeventlib.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		01F39DC413903765004C3691 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				01F39DC513903765004C3691 /* qEvent.h */,
+				01F39DC613903765004C3691 /* qEventHandler.h */,
+				01F39DC713903765004C3691 /* qEventListener.h */,
+				01F39DC813903765004C3691 /* qEventMonitor.h */,
+				01F39DC913903765004C3691 /* qEventRegistry.h */,
+				01F39DCA13903765004C3691 /* qFactory.h */,
+				01F39DCB13903765004C3691 /* qKeyEventListener.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		01F39DCC13903765004C3691 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				01F39DCD13903765004C3691 /* qEvent.cpp */,
+				01F39DCE13903765004C3691 /* qEventHandler.cpp */,
+				01F39DCF13903765004C3691 /* qEventListener.cpp */,
+				01F39DD013903765004C3691 /* qEventMonitor.cpp */,
+				01F39DD113903765004C3691 /* qEventRegistry.cpp */,
+				01F39DD213903765004C3691 /* qFactory.cpp */,
+				01F39DD313903765004C3691 /* qKeyEventListener.cpp */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		01F39DBD1390363B004C3691 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01F39DD413903765004C3691 /* qEvent.h in Headers */,
+				01F39DD513903765004C3691 /* qEventHandler.h in Headers */,
+				01F39DD613903765004C3691 /* qEventListener.h in Headers */,
+				01F39DD713903765004C3691 /* qEventMonitor.h in Headers */,
+				01F39DD813903765004C3691 /* qEventRegistry.h in Headers */,
+				01F39DD913903765004C3691 /* qFactory.h in Headers */,
+				01F39DDA13903765004C3691 /* qKeyEventListener.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		01F39DBE1390363B004C3691 /* qeventlib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01F39DC11390363B004C3691 /* Build configuration list for PBXNativeTarget "qeventlib" */;
+			buildPhases = (
+				01F39DBB1390363B004C3691 /* Sources */,
+				01F39DBC1390363B004C3691 /* Frameworks */,
+				01F39DBD1390363B004C3691 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = qeventlib;
+			productName = qeventlib;
+			productReference = 01F39DBF1390363B004C3691 /* libqeventlib.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		01F39DB413903585004C3691 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 01F39DB713903585004C3691 /* Build configuration list for PBXProject "qEvent" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 01F39DB213903585004C3691;
+			productRefGroup = 01F39DC01390363B004C3691 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				01F39DBE1390363B004C3691 /* qeventlib */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		01F39DBB1390363B004C3691 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01F39DDB13903765004C3691 /* qEvent.cpp in Sources */,
+				01F39DDC13903765004C3691 /* qEventHandler.cpp in Sources */,
+				01F39DDD13903765004C3691 /* qEventListener.cpp in Sources */,
+				01F39DDE13903765004C3691 /* qEventMonitor.cpp in Sources */,
+				01F39DDF13903765004C3691 /* qEventRegistry.cpp in Sources */,
+				01F39DE013903765004C3691 /* qFactory.cpp in Sources */,
+				01F39DE113903765004C3691 /* qKeyEventListener.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		01F39DB913903585004C3691 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		01F39DBA13903585004C3691 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		01F39DC21390363B004C3691 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				EXECUTABLE_PREFIX = lib;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = 4.2;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include/,
+					"$(SRCROOT)/../qScript/include/",
+					"$(SRCROOT)/../qUtil/include/",
+				);
+				LIBRARY_SEARCH_PATHS = /usr/local/lib/;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				VALID_ARCHS = i386;
+			};
+			name = Debug;
+		};
+		01F39DC31390363B004C3691 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EXECUTABLE_PREFIX = lib;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = 4.2;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include/,
+					"$(SRCROOT)/../qScript/include/",
+					"$(SRCROOT)/../qUtil/include/",
+				);
+				LIBRARY_SEARCH_PATHS = /usr/local/lib/;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				VALID_ARCHS = i386;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		01F39DB713903585004C3691 /* Build configuration list for PBXProject "qEvent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01F39DB913903585004C3691 /* Debug */,
+				01F39DBA13903585004C3691 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		01F39DC11390363B004C3691 /* Build configuration list for PBXNativeTarget "qeventlib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01F39DC21390363B004C3691 /* Debug */,
+				01F39DC31390363B004C3691 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 01F39DB413903585004C3691 /* Project object */;
+}

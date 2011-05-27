@@ -52,6 +52,7 @@ namespace qLib
 			~qComponent();
 			
 			qComponent		*getRoot();
+			void			setRoot(qComponent *_root);
 			qComponent		*getComp(std::string comp);
 			bool			addComp(std::string comp, qComponent *it);
 			
