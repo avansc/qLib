@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		01C3C91213904EF900E6B6E2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01C3C91113904EF900E6B6E2 /* main.cpp */; };
 		01C3C91A13904FD600E6B6E2 /* libqlib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C3C91913904FD600E6B6E2 /* libqlib.a */; };
+		01D08F6413905F68005D9954 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D08F6313905F68005D9954 /* OpenGL.framework */; };
+		01D08F6613905F6E005D9954 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D08F6513905F6E005D9954 /* GLUT.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +30,8 @@
 		01C3C91113904EF900E6B6E2 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		01C3C91313904EF900E6B6E2 /* qLib_usage_example.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = qLib_usage_example.1; sourceTree = "<group>"; };
 		01C3C91913904FD600E6B6E2 /* libqlib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libqlib.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		01D08F6313905F68005D9954 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		01D08F6513905F6E005D9954 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +39,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01D08F6613905F6E005D9954 /* GLUT.framework in Frameworks */,
+				01D08F6413905F68005D9954 /* OpenGL.framework in Frameworks */,
 				01C3C91A13904FD600E6B6E2 /* libqlib.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -45,6 +51,8 @@
 		01C3C90213904EF900E6B6E2 = {
 			isa = PBXGroup;
 			children = (
+				01D08F6513905F6E005D9954 /* GLUT.framework */,
+				01D08F6313905F68005D9954 /* OpenGL.framework */,
 				01C3C91913904FD600E6B6E2 /* libqlib.a */,
 				01C3C91013904EF900E6B6E2 /* qLib_usage_example */,
 				01C3C90E13904EF900E6B6E2 /* Products */,

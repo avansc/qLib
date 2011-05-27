@@ -36,6 +36,7 @@
  */
 
 #include <stdio.h>
+#include <GLUT/GLUT.h>
 
 #include "qLib.h"
 
@@ -46,23 +47,99 @@ qLib::Script::qScriptEngine *engine;
 qLib::Script::qScriptModule *mod;
 qLib::Script::qScriptExec *exe;
 
-int global_int_native = 0;
+int mx;
+int my;
 
-int main (int argc, const char * argv[])
+int px = 100;
+int py = 100;
+
+void draw(int x, int y)
+{
+	glPushMatrix();
+    glTranslatef(x, y, 0);
+    glBegin(GL_QUADS);
+    glVertex2f(-10, -10);
+    glVertex2f(10, -10);
+    glVertex2f(10, 10);
+    glVertex2f(-10, 10);
+    glEnd();
+    glPopMatrix();
+}
+
+void myTimer(int value){
+	
+	glutPostRedisplay();
+	glutTimerFunc(1000/60, myTimer, 1);
+	
+}
+
+void display(void)
+{	
+	exe->exec();
+	exe->reset();
+	
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	
+	draw(px, py);
+	
+    glutSwapBuffers();
+}
+
+void reshape(int width, int height)
+{
+    glViewport(0, 0, width, height);
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    gluOrtho2D(0, width, 0, height);
+    glMatrixMode(GL_MODELVIEW);
+}
+
+void idle(void)
+{
+    glutPostRedisplay();
+}
+
+
+void KeyDown(unsigned char key, int x, int y)
+{
+}
+
+void KeyUp(unsigned char key, int x, int y)
+{	
+}
+
+void PassiveMouse(int _x, int _y)
+{
+    mx = _x;
+    my = _y;
+}
+
+int main(int argc, char **argv)
 {
 	engine = new qLib::Script::qScriptEngine();
 	
 	//REGISTER_GLOBAL_PROPERTY(engine, "int@ global_int_script", &global_int_native);
-	engine->RegisterGlobalProperty("int global_int_script", &global_int_native);
+	engine->RegisterGlobalProperty("int px", &px);
+	engine->RegisterGlobalProperty("int py", &py);
 	
 	mod = engine->pGetScriptModule("test");
 	
 	const char *script =
-	"void test()								"
-	"{											"
-	"	Print(\"Hello from the script, count : \" + global_int_script + \"\\n\");	"
-	"	global_int_script++;					"
-	"}											";
+	"int state = 0;									"
+	"void test()									"
+	"{												"
+	"	switch(state)								"
+	"	{											"
+	"		case 0 : px++; break;					"
+	"		case 1 : py++; break;					"
+	"		case 2 : px--; break;					"
+	"		case 3 : py--; break;					"
+	"	}											"
+	"	if(state == 0 && px == 400) state++;		"
+	"	else if(state == 1 && py == 400) state++;	"
+	"	else if(state == 2 && px == 100) state++;	"
+	"	else if(state == 3 && py == 100) state=0;	"
+	"}												";
 	
 	int res = mod->addSection((char*)script);
 	
@@ -74,14 +151,23 @@ int main (int argc, const char * argv[])
 	
 	exe = engine->pGetScriptExec("test", "void test()");
 	
-	for(unsigned int a = 0;a < 100000;a++)
-	{
-		//printf("Hello from C++, count : %d\n", global_int_native);
-		a++;
-		exe->exec();
-		exe->reset();
-	}
+	glutInit(&argc, argv);
 	
+    glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE | GLUT_DEPTH);
+    glutInitWindowSize(640, 480);
+	
+    glutCreateWindow("qeventlib example");
+	
+    glutDisplayFunc(display);
+    glutReshapeFunc(reshape);
+    glutIdleFunc(idle);
+	
+    glutKeyboardFunc(KeyDown);
+    glutKeyboardUpFunc(KeyUp);
+    glutPassiveMotionFunc(PassiveMouse);
+	
+    glutMainLoop();
+
     return 0;
 }
 
