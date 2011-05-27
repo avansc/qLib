@@ -47,7 +47,7 @@
 #include "../add_on/scriptarray/scriptarray.h"
 #include "../add_on/scriptdictionary/scriptdictionary.h"*/
 
-/*namespace qLib
+namespace qLib
 {
 	namespace Script
 	{
@@ -66,7 +66,7 @@
 		typedef void(*pREG_FUNC)(qScriptEngine*);
 	}
 }
-
+/*
 #define scriptable_class(name) class (name) : public iScriptable<(name)> 
 
 #define REGISTER_CLASS(ENGINE, NAME, CLASS)																									\
