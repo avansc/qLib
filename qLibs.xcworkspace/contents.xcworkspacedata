@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:qLib/qLib.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:qEvent/qEvent.xcodeproj">
    </FileRef>
    <FileRef
