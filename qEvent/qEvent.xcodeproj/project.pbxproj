@@ -21,6 +21,7 @@
 		01F39DDF13903765004C3691 /* qEventRegistry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01F39DD113903765004C3691 /* qEventRegistry.cpp */; };
 		01F39DE013903765004C3691 /* qFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01F39DD213903765004C3691 /* qFactory.cpp */; };
 		01F39DE113903765004C3691 /* qKeyEventListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01F39DD313903765004C3691 /* qKeyEventListener.cpp */; };
+		01F39DF913904327004C3691 /* qEventLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 01F39DF813904326004C3691 /* qEventLib.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		01F39DD113903765004C3691 /* qEventRegistry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = qEventRegistry.cpp; sourceTree = "<group>"; };
 		01F39DD213903765004C3691 /* qFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = qFactory.cpp; sourceTree = "<group>"; };
 		01F39DD313903765004C3691 /* qKeyEventListener.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = qKeyEventListener.cpp; sourceTree = "<group>"; };
+		01F39DF813904326004C3691 /* qEventLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qEventLib.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				01F39DC913903765004C3691 /* qEventRegistry.h */,
 				01F39DCA13903765004C3691 /* qFactory.h */,
 				01F39DCB13903765004C3691 /* qKeyEventListener.h */,
+				01F39DF813904326004C3691 /* qEventLib.h */,
 			);
 			path = include;
 			sourceTree = "<group>";
@@ -111,6 +114,7 @@
 				01F39DD813903765004C3691 /* qEventRegistry.h in Headers */,
 				01F39DD913903765004C3691 /* qFactory.h in Headers */,
 				01F39DDA13903765004C3691 /* qKeyEventListener.h in Headers */,
+				01F39DF913904327004C3691 /* qEventLib.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

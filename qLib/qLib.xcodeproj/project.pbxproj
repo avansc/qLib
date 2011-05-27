@@ -1,0 +1,218 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		01F39DF7139042E9004C3691 /* qLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 01F39DF6139042E9004C3691 /* qLib.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		01F39DEF13904270004C3691 /* libqlib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libqlib.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		01F39DF6139042E9004C3691 /* qLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qLib.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		01F39DEC13904270004C3691 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		01F39DE213904265004C3691 = {
+			isa = PBXGroup;
+			children = (
+				01F39DF4139042D1004C3691 /* include */,
+				01F39DF5139042D1004C3691 /* src */,
+				01F39DF013904270004C3691 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		01F39DF013904270004C3691 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				01F39DEF13904270004C3691 /* libqlib.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		01F39DF4139042D1004C3691 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				01F39DF6139042E9004C3691 /* qLib.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		01F39DF5139042D1004C3691 /* src */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		01F39DED13904270004C3691 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01F39DF7139042E9004C3691 /* qLib.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		01F39DEE13904270004C3691 /* qlib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01F39DF113904270004C3691 /* Build configuration list for PBXNativeTarget "qlib" */;
+			buildPhases = (
+				01F39DEB13904270004C3691 /* Sources */,
+				01F39DEC13904270004C3691 /* Frameworks */,
+				01F39DED13904270004C3691 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = qlib;
+			productName = qlib;
+			productReference = 01F39DEF13904270004C3691 /* libqlib.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		01F39DE413904265004C3691 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 01F39DE713904265004C3691 /* Build configuration list for PBXProject "qLib" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 01F39DE213904265004C3691;
+			productRefGroup = 01F39DF013904270004C3691 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				01F39DEE13904270004C3691 /* qlib */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		01F39DEB13904270004C3691 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		01F39DE913904265004C3691 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		01F39DEA13904265004C3691 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		01F39DF213904270004C3691 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				EXECUTABLE_PREFIX = lib;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = 4.2;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include/,
+					"$(SRCROOT)/../qScript/include/",
+					"$(SRCROOT)/../qUtil/include/",
+					"$(SRCROOT)/../qEvent/include/",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				VALID_ARCHS = i386;
+			};
+			name = Debug;
+		};
+		01F39DF313904270004C3691 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EXECUTABLE_PREFIX = lib;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = 4.2;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include/,
+					"$(SRCROOT)/../qScript/include/",
+					"$(SRCROOT)/../qUtil/include/",
+					"$(SRCROOT)/../qEvent/include/",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				VALID_ARCHS = i386;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		01F39DE713904265004C3691 /* Build configuration list for PBXProject "qLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01F39DE913904265004C3691 /* Debug */,
+				01F39DEA13904265004C3691 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		01F39DF113904270004C3691 /* Build configuration list for PBXNativeTarget "qlib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01F39DF213904270004C3691 /* Debug */,
+				01F39DF313904270004C3691 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 01F39DE413904265004C3691 /* Project object */;
+}
