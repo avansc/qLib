@@ -38,4 +38,40 @@
 #include "qUtilLib.h"
 #include "qEventLib.h"
 
+/*namespace qLib
+{
+	namespace Script
+	{
+		template<typename T> class iScriptable;
+		
+		class qScriptEngine;
+		class qScriptExec;
+		class qScriptModule;
+		class qScriptLibrary;		
+		
+		typedef iScriptable<qScriptEngine> qScriptEngine_td;
+		typedef iScriptable<qScriptExec> qScriptExec_td;
+		typedef iScriptable<qScriptModule> qScriptModule_td;
+		typedef iScriptable<qScriptLibrary> qScriptLibrary_td;
+		
+		typedef void(*pREG_FUNC)(qScriptEngine*);
+	}
+	
+	namespace Util
+	{		
+		class qObject;
+		class qComponent;
+		
+		typedef qLib::Script::iScriptable<qObject> qObject_td;
+	}
+	namespace Event
+	{
+		class qEventHandler;
+		class qEventListener;
+		class qEventMonitor;
+		class qEventRegistry;
+		class qKeyEventListener;
+	}
+}*/
+
 #endif
