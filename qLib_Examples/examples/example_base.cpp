@@ -16,11 +16,37 @@ static char keys[255];
 
 static void run_example(qLibExample *example);
 
+static void drawString(int x, int y, float r, float g, float b, const char *str)
+{
+	glColor3f(r, g, b);
+	glRasterPos2i(x, y);
+	
+	for(int i=0, len=strlen(str); i<len; i++){
+		if(str[i] == '\n'){
+			y -= 16;
+			glRasterPos2i(x, y);
+		} else {
+			glutBitmapCharacter(GLUT_BITMAP_HELVETICA_10, str[i]);
+		}
+	}
+}
+
 static void display(void)
 {	
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	
 	current_example->update(1);
+	
+	for(int a = 0;a < example_count;a++)
+	{
+		char data[200];
+		sprintf(data, "ex %d. %s", a+1, examples[a].name);
+		
+		if(a == example_index)
+			drawString(15, 465 - a*16, 0, 1, 0, data);
+		else
+			drawString(10, 465 - a*16, 1, 1, 1, data);
+	}
 	
     glutSwapBuffers();
 }
@@ -39,18 +65,27 @@ static void idle(void)
     glutPostRedisplay();
 }
 
-
 static void KeyDown(unsigned char key, int x, int y)
 {
 	keys[key] = 1;
 	mx = x;
 	my = y;
 	
+	
 	if(key == 'n')
 	{
 		example_index ++;
 		if(example_index >= example_count) example_index = 0;
 		run_example(&examples[example_index]);
+	}
+	
+	if(key >= '0' && key <= '9')
+	{
+		if(key-48 <= example_count)
+		{
+			example_index = key-49;
+			run_example(&examples[example_index]);
+		}
 	}
 }
 
@@ -134,6 +169,8 @@ int main(int argc, const char **argv)
 	glutStuff(argc, argv);
 	run_example(&example_list[example_index]);
 	glutMainLoop();
+	
+	example_list[example_index].destroy();
 	
 	return 0;
 }

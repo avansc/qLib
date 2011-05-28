@@ -53,6 +53,7 @@ qScriptExec::qScriptExec(asIScriptContext *_ctx)
 
 qScriptExec::~qScriptExec()
 {
+	this->ctx->Release();
 }
 
 int qScriptExec::exec()

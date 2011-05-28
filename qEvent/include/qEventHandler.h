@@ -35,7 +35,6 @@
 #define	_qEventHandler_h
 
 #include "qComponent.h"
-//#include "qEvent.h"
 
 namespace qLib
 {

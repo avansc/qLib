@@ -135,6 +135,7 @@ static void drawString(int x, int y, const char *str)
 
 void draw(int x, int y)
 {
+	glColor3f(1.0f, 1.0f, 1.0f);
 	glPushMatrix();
     glTranslatef(x, y, 0);
     glBegin(GL_QUADS);
@@ -188,6 +189,10 @@ static void init(void)
 
 static void destroy(void)
 {
+	delete exe;
+	delete mod;
+	delete engine;
+	delete plr;
 }
 
 qLibExample example_3_register_classes = {

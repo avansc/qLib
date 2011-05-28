@@ -97,6 +97,9 @@ static void init(void)
 
 static void destroy(void)
 {
+	delete exe;
+	delete mod;
+	delete engine;
 }
 
 qLibExample example_2_register_variables =
