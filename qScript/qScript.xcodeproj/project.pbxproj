@@ -36,6 +36,7 @@
 		0190CB40138DD91400115714 /* qScriptExec.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01B8F3C0138DD6F8007AA93A /* qScriptExec.cpp */; };
 		0190CB41138DD91400115714 /* qScriptLibrary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01B8F3C1138DD6F8007AA93A /* qScriptLibrary.cpp */; };
 		0190CB42138DD91400115714 /* qScriptModule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01B8F3C2138DD6F8007AA93A /* qScriptModule.cpp */; };
+		01D091E213907BB8005D9954 /* libangelscript.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D091E113907BB8005D9954 /* libangelscript.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +84,7 @@
 		01B8F3C0138DD6F8007AA93A /* qScriptExec.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = qScriptExec.cpp; sourceTree = "<group>"; };
 		01B8F3C1138DD6F8007AA93A /* qScriptLibrary.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = qScriptLibrary.cpp; sourceTree = "<group>"; };
 		01B8F3C2138DD6F8007AA93A /* qScriptModule.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = qScriptModule.cpp; sourceTree = "<group>"; };
+		01D091E113907BB8005D9954 /* libangelscript.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libangelscript.a; path = ../AngelSript/Products/libangelscript.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01D091E213907BB8005D9954 /* libangelscript.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +285,7 @@
 		01B8F3AD138DD638007AA93A = {
 			isa = PBXGroup;
 			children = (
+				01D091E113907BB8005D9954 /* libangelscript.a */,
 				0190CAF1138DD8E500115714 /* add_ons */,
 				01B8F3B6138DD6F8007AA93A /* include */,
 				01B8F3BE138DD6F8007AA93A /* src */,
@@ -424,10 +428,13 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = /usr/local/include/;
-				LIBRARY_SEARCH_PATHS = /usr/local/lib/;
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/lib/,
+					"\"$(SRCROOT)/../AngelSript/Products\"",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "-langelscript";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				VALID_ARCHS = i386;
@@ -449,9 +456,12 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = /usr/local/include/;
-				LIBRARY_SEARCH_PATHS = /usr/local/lib/;
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/lib/,
+					"\"$(SRCROOT)/../AngelSript/Products\"",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				OTHER_LDFLAGS = "-langelscript";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				VALID_ARCHS = i386;
@@ -480,6 +490,7 @@
 				0190CAEE138DD77000115714 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		01B8F3B2138DD638007AA93A /* Build configuration list for PBXProject "qScript" */ = {
 			isa = XCConfigurationList;
