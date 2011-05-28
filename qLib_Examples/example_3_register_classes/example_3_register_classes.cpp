@@ -101,7 +101,36 @@ int px = 100;
 int py = 100;
 
 player *plr;
+
+static const char *script =
+"void patrol(player &plr)"
+"{"
+"	if(plr.getX() >= 400 && plr.getY() <= 100)"
+"		plr.setDir(0,1);"
+"	else if(plr.getY() >= 400  && plr.getX() >= 400)"
+"		plr.setDir(-1,0);"
+"	else if(plr.getX() <= 100 && plr.getY() >= 400)"
+"		plr.setDir(0,-1);"
+"	else if(plr.getY() <= 100 && plr.getX() <= 100)"
+"		plr.setDir(1,0);"
+"}";
+
 ///////////////////////////////////////////////////
+
+static void drawString(int x, int y, const char *str)
+{
+	glColor3f(1.0f, 1.0f, 1.0f);
+	glRasterPos2i(x, y);
+	
+	for(int i=0, len=strlen(str); i<len; i++){
+		if(str[i] == '\n'){
+			y -= 16;
+			glRasterPos2i(x, y);
+		} else {
+			glutBitmapCharacter(GLUT_BITMAP_HELVETICA_10, str[i]);
+		}
+	}
+}
 
 void draw(int x, int y)
 {
@@ -123,6 +152,9 @@ static void update(float dt)
 	exe->reset();
 	plr->move(0.3f);
 	draw(plr->getX(), plr->getY());
+	char data[200];
+	sprintf(data, "pos = <%f,%f>", plr->getX(), plr->getY());
+	drawString(10, 10, data);
 }
 
 static void init(void)
@@ -137,19 +169,6 @@ static void init(void)
 	engine->RegisterGlobalProperty("int py", &py);
 	
 	mod = engine->pGetScriptModule("patrol_module");
-	
-	const char *script =
-	"void patrol(player &plr)								"
-	"{														"
-	"	if(plr.getX() >= 400 && plr.getY() <= 100)			"
-	"		plr.setDir(0,1);								"
-	"	else if(plr.getY() >= 400  && plr.getX() >= 400)	"
-	"		plr.setDir(-1,0);								"
-	"	else if(plr.getX() <= 100 && plr.getY() >= 400)		"
-	"		plr.setDir(0,-1);								"
-	"	else if(plr.getY() <= 100 && plr.getX() <= 100)		"
-	"		plr.setDir(1,0);								"
-	"}														";
 	
 	if(mod->addSection((char*)script) < 0)
 	{

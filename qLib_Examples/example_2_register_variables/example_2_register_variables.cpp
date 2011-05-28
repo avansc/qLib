@@ -8,6 +8,7 @@
 
 #include "example_2_register_variables.h"
 
+#include <string.h>
 #include <GLUT/GLUT.h>
 
 #include "example_base.h"
@@ -26,6 +27,21 @@ float val = 0;
 
 ///////////////////////////////////////////////////
 
+static void drawString(int x, int y, const char *str)
+{
+	glColor3f(1.0f, 1.0f, 1.0f);
+	glRasterPos2i(x, y);
+	
+	for(int i=0, len=strlen(str); i<len; i++){
+		if(str[i] == '\n'){
+			y -= 16;
+			glRasterPos2i(x, y);
+		} else {
+			glutBitmapCharacter(GLUT_BITMAP_HELVETICA_10, str[i]);
+		}
+	}
+}
+
 static void draw(int x, int y)
 {
 	glPushMatrix();
@@ -43,11 +59,15 @@ static void update(float dt)
 {
 	exe->exec();
 	exe->reset();
+	char data[200];
+	sprintf(data, "Val = %f", val);
+	drawString(10, 10, data);
 }
 
 static void init(void)
 {
 	engine = new qLib::Script::qScriptEngine();
+	val = 0;
 	
 	engine->RegisterGlobalProperty("float val", &val);
 	
@@ -56,6 +76,8 @@ static void init(void)
 	const char *script =
 	"void func(void)										"
 	"{														"
+	"	Print(\"registers value = \" + val + \"\\n\");		"
+	"	val+=0.1;											"
 	"}														";
 	
 	if(mod->addSection((char*)script) < 0)

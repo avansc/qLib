@@ -29,8 +29,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		012B9F8E1390942300D8BD95 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = SDKs/MacOSX10.6.sdk/System/Library/Frameworks/OpenGL.framework; sourceTree = DEVELOPER_DIR; };
-		012B9F901390942800D8BD95 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = SDKs/MacOSX10.6.sdk/System/Library/Frameworks/GLUT.framework; sourceTree = DEVELOPER_DIR; };
 		0196D02E1390E9E200B000E7 /* example_1_load_scripts.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = example_1_load_scripts.cpp; sourceTree = "<group>"; };
 		0196D04E1390EB4900B000E7 /* examples */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = examples; sourceTree = BUILT_PRODUCTS_DIR; };
 		0196D0571390EB6D00B000E7 /* example_base.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = example_base.cpp; sourceTree = "<group>"; };
@@ -61,11 +59,7 @@
 		012B9F6E13908A5000D8BD95 = {
 			isa = PBXGroup;
 			children = (
-				0196D05F1390EC4A00B000E7 /* libqlib.a */,
-				0196D05D1390EB8D00B000E7 /* OpenGL.framework */,
-				0196D05B1390EB8300B000E7 /* GLUT.framework */,
-				012B9F8E1390942300D8BD95 /* OpenGL.framework */,
-				012B9F901390942800D8BD95 /* GLUT.framework */,
+				0196D0861390F4AF00B000E7 /* Libraries */,
 				012B9F7713908D8C00D8BD95 /* example_1_load_scripts */,
 				012B9F7813908D8C00D8BD95 /* example_2_register_variables */,
 				012B9F7913908D8C00D8BD95 /* example_3_register_classes */,
@@ -131,6 +125,16 @@
 				0196D0581390EB6D00B000E7 /* example_base.h */,
 			);
 			path = examples;
+			sourceTree = "<group>";
+		};
+		0196D0861390F4AF00B000E7 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				0196D05F1390EC4A00B000E7 /* libqlib.a */,
+				0196D05D1390EB8D00B000E7 /* OpenGL.framework */,
+				0196D05B1390EB8300B000E7 /* GLUT.framework */,
+			);
+			name = Libraries;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

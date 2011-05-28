@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include <GLUT/GLUT.h>
 
 #include "example_base.h"
