@@ -2121,6 +2121,7 @@
 				01D08F73139065F8005D9954 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		01D091D813907AF7005D9954 /* Build configuration list for PBXAggregateTarget "angelscript-build" */ = {
 			isa = XCConfigurationList;
@@ -2129,6 +2130,7 @@
 				01D091DA13907AF7005D9954 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
