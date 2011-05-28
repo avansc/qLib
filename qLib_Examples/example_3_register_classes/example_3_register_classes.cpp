@@ -90,6 +90,7 @@ void player::REGISTER_SCRIPTABLES(qScriptEngine *engine)
 }
 
 ///////////////////////////////////////////////////
+
 static qLib::Script::qScriptEngine *engine;
 static qLib::Script::qScriptModule *mod;
 static qLib::Script::qScriptExec *exe;
@@ -173,13 +174,13 @@ static void init(void)
 	if(mod->addSection((char*)script) < 0)
 	{
 		printf("Failed to get script module\n");
-		return;
+		exit(-1);
 	}
 	
 	if(mod->buildScript() < 0)
 	{
 		printf("Failed to build script\n");
-		return;
+		exit(-1);
 	}
 	
 	exe = engine->pGetScriptExec("patrol_module", "void patrol(player &plr)");
