@@ -16,7 +16,7 @@
                BlueprintIdentifier = "01D091D713907AF7005D9954"
                BuildableName = "angelscript-build"
                BlueprintName = "angelscript-build"
-               ReferencedContainer = "container:AngelSript.xcodeproj">
+               ReferencedContainer = "container:AngelScript.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

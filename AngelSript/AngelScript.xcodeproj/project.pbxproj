@@ -1985,7 +1985,7 @@
 /* Begin PBXProject section */
 		01D08F69139065BD005D9954 /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = 01D08F6C139065BD005D9954 /* Build configuration list for PBXProject "AngelSript" */;
+			buildConfigurationList = 01D08F6C139065BD005D9954 /* Build configuration list for PBXProject "AngelScript" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -2105,7 +2105,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		01D08F6C139065BD005D9954 /* Build configuration list for PBXProject "AngelSript" */ = {
+		01D08F6C139065BD005D9954 /* Build configuration list for PBXProject "AngelScript" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				01D08F6E139065BD005D9954 /* Debug */,
