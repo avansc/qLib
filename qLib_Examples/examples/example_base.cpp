@@ -110,13 +110,15 @@ static void glutStuff(int argc, const char *argv[])
 
 extern qLibExample example_1_load_scripts;
 extern qLibExample example_2_register_variables;
+extern qLibExample example_3_register_classes;
 
 int main(int argc, const char **argv)
 {
 	qLibExample example_list[] = 
 	{
 		example_1_load_scripts,
-		example_2_register_variables
+		example_2_register_variables,
+		example_3_register_classes
 	};
 	
 	examples = example_list;

@@ -13,6 +13,7 @@
 		0196D05E1390EB8D00B000E7 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0196D05D1390EB8D00B000E7 /* OpenGL.framework */; };
 		0196D0601390EC4A00B000E7 /* libqlib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0196D05F1390EC4A00B000E7 /* libqlib.a */; };
 		0196D0631390EFD500B000E7 /* example_2_register_variables.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0196D0611390EFD500B000E7 /* example_2_register_variables.cpp */; };
+		0196D0831390F32700B000E7 /* example_3_register_classes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0196D0811390F32700B000E7 /* example_3_register_classes.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +40,8 @@
 		0196D05F1390EC4A00B000E7 /* libqlib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libqlib.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0196D0611390EFD500B000E7 /* example_2_register_variables.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = example_2_register_variables.cpp; sourceTree = "<group>"; };
 		0196D0621390EFD500B000E7 /* example_2_register_variables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = example_2_register_variables.h; sourceTree = "<group>"; };
+		0196D0811390F32700B000E7 /* example_3_register_classes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = example_3_register_classes.cpp; sourceTree = "<group>"; };
+		0196D0821390F32700B000E7 /* example_3_register_classes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = example_3_register_classes.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +96,8 @@
 		012B9F7913908D8C00D8BD95 /* example_3_register_classes */ = {
 			isa = PBXGroup;
 			children = (
+				0196D0811390F32700B000E7 /* example_3_register_classes.cpp */,
+				0196D0821390F32700B000E7 /* example_3_register_classes.h */,
 			);
 			path = example_3_register_classes;
 			sourceTree = "<group>";
@@ -178,6 +183,7 @@
 				0196D05A1390EB7800B000E7 /* example_1_load_scripts.cpp in Sources */,
 				0196D0591390EB6D00B000E7 /* example_base.cpp in Sources */,
 				0196D0631390EFD500B000E7 /* example_2_register_variables.cpp in Sources */,
+				0196D0831390F32700B000E7 /* example_3_register_classes.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +279,7 @@
 				0196D0561390EB4900B000E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

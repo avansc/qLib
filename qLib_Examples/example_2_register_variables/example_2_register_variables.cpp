@@ -41,11 +41,8 @@ static void draw(int x, int y)
 
 static void update(float dt)
 {
-	//exe->ctx->SetArgObject(0, (player*)plr);
 	exe->exec();
 	exe->reset();
-	//plr->move(0.3f);
-	//draw(plr->getX(), plr->getY());
 }
 
 static void init(void)
