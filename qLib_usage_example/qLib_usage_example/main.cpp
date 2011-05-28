@@ -208,40 +208,24 @@ int main(int argc, char **argv)
 	
 	mod = engine->pGetScriptModule("patrol_module");
 	
-	/*
 	const char *script =
-	"int state = 0;									"
-	"void test()									"
-	"{												"
-	"	switch(state)								"
-	"	{											"
-	"		case 0 : px++; break;					"
-	"		case 1 : py++; break;					"
-	"		case 2 : px--; break;					"
-	"		case 3 : py--; break;					"
-	"	}											"
-	"	if(state == 0 && px == 400) state++;		"
-	"	else if(state == 1 && py == 400) state++;	"
-	"	else if(state == 2 && px == 100) state++;	"
-	"	else if(state == 3 && py == 100) state=0;	"
-	"}												";
-	*/
+	"void patrol(player &plr)								"
+	"{														"
+	"	if(plr.getX() >= 400 && plr.getY() <= 100)			"
+	"		plr.setDir(0,1);								"
+	"	else if(plr.getY() >= 400  && plr.getX() >= 400)	"
+	"		plr.setDir(-1,0);								"
+	"	else if(plr.getX() <= 100 && plr.getY() >= 400)		"
+	"		plr.setDir(0,-1);								"
+	"	else if(plr.getY() <= 100 && plr.getX() <= 100)		"
+	"		plr.setDir(1,0);								"
+	"}														";
 	
-	const char *script =
-	"int state = 0;															"
-	"void patrol(player &plr)												"
-	"{																		"
-	"	if(plr.getX() >= 400 && plr.getY() <= 100)							"
-	"		plr.setDir(0,1);												"
-	"	else if(plr.getY() >= 400  && plr.getX() >= 400)					"
-	"		plr.setDir(-1,0);												"
-	"	else if(plr.getX() <= 100 && plr.getY() >= 400)						"
-	"		plr.setDir(0,-1);												"
-	"	else if(plr.getY() <= 100 && plr.getX() <= 100)						"
-	"		plr.setDir(1,0);												"
-	"}																		";
-	
-	int res = mod->addSection((char*)script);
+	if(mod->addSection((char*)script) < 0)
+	{
+		printf("Failed to get script module\n");
+		return -1;
+	}
 	
 	if(mod->buildScript() < 0)
 	{
