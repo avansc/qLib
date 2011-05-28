@@ -7,10 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01D091E513907CAB005D9954 /* qLib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01D091E313907C9D005D9954 /* qLib.cpp */; };
+		01D091E913907CE5005D9954 /* libqeventlib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D091E613907CE5005D9954 /* libqeventlib.a */; };
+		01D091EA13907CE5005D9954 /* libqscriptlib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D091E713907CE5005D9954 /* libqscriptlib.a */; };
+		01D091EB13907CE5005D9954 /* libqutillib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D091E813907CE5005D9954 /* libqutillib.a */; };
 		01F39DF7139042E9004C3691 /* qLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 01F39DF6139042E9004C3691 /* qLib.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01D091E313907C9D005D9954 /* qLib.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = qLib.cpp; sourceTree = "<group>"; };
+		01D091E613907CE5005D9954 /* libqeventlib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libqeventlib.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		01D091E713907CE5005D9954 /* libqscriptlib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libqscriptlib.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		01D091E813907CE5005D9954 /* libqutillib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libqutillib.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		01F39DEF13904270004C3691 /* libqlib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libqlib.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		01F39DF6139042E9004C3691 /* qLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qLib.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -20,6 +28,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01D091E913907CE5005D9954 /* libqeventlib.a in Frameworks */,
+				01D091EA13907CE5005D9954 /* libqscriptlib.a in Frameworks */,
+				01D091EB13907CE5005D9954 /* libqutillib.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -29,6 +40,9 @@
 		01F39DE213904265004C3691 = {
 			isa = PBXGroup;
 			children = (
+				01D091E613907CE5005D9954 /* libqeventlib.a */,
+				01D091E713907CE5005D9954 /* libqscriptlib.a */,
+				01D091E813907CE5005D9954 /* libqutillib.a */,
 				01F39DF4139042D1004C3691 /* include */,
 				01F39DF5139042D1004C3691 /* src */,
 				01F39DF013904270004C3691 /* Products */,
@@ -54,6 +68,7 @@
 		01F39DF5139042D1004C3691 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				01D091E313907C9D005D9954 /* qLib.cpp */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -116,6 +131,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01D091E513907CAB005D9954 /* qLib.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,6 +227,7 @@
 				01F39DF313904270004C3691 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
