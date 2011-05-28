@@ -43,6 +43,81 @@
 #include "qScriptEngine.h"
 #include "qScriptModule.h"
 
+class player : public qLib::Util::qComponent
+{
+public:
+	player();
+	player(const float &_x, const float &_y);
+	virtual ~player(){};
+	
+	float getX() { return this->x; }
+	float getY() { return this->y; }
+	
+	int getXDir() { return this->dx; }
+	int getYDir() { return this->dy; }
+	
+	void setX(float _x) { this->x = _x; }
+	void setY(float _y) { this->y = _y; }
+	
+	void move(float dt);
+	void setDir(int _dx, int _dy);
+	
+	virtual void REGISTER_SCRIPTABLES(qScriptEngine *engine);
+private:
+	float x,y;
+	int dx, dy;
+};
+
+player::player()
+:	x(0),
+	y(0),
+	dx(1),
+	dy(0)
+{
+}
+
+player::player(const float &_x, const float &_y)
+:	x(_x),
+	y(_y),
+	dx(1),
+	dy(0)
+{
+}
+
+void player::move(float dt)
+{
+	this->x += ((float)this->dx)*dt;
+	this->y += ((float)this->dy)*dt;
+}
+
+void player::setDir(int _dx, int _dy)
+{
+	this->dx = _dx;
+	this->dy = _dy;
+}
+
+
+void player::REGISTER_SCRIPTABLES(qScriptEngine *engine)
+{
+	REGISTER_CLASS(engine, "player", player);
+	
+	
+	REGISTER_METHOD(engine, "player", player, "float getX(void)", getX);
+	REGISTER_METHOD(engine, "player", player, "float getY(void)", getY);
+	
+	REGISTER_METHOD(engine, "player", player, "int getXDir(void)", getXDir);
+	REGISTER_METHOD(engine, "player", player, "int getYDir(void)", getYDir);
+	
+	REGISTER_METHOD(engine, "player", player, "void setX(float _x)", setX);
+	REGISTER_METHOD(engine, "player", player, "void setY(float _y)", setY);
+	
+	REGISTER_METHOD(engine, "player", player, "void move(float _dt)", move);
+	REGISTER_METHOD(engine, "player", player, "void setDir(int _dx, int _dy)", setDir);
+}
+
+
+
+///////////////////////////////////////////////////
 qLib::Script::qScriptEngine *engine;
 qLib::Script::qScriptModule *mod;
 qLib::Script::qScriptExec *exe;
@@ -52,6 +127,9 @@ int my;
 
 int px = 100;
 int py = 100;
+
+player *plr;
+///////////////////////////////////////////////////
 
 void draw(int x, int y)
 {
@@ -75,12 +153,15 @@ void myTimer(int value){
 
 void display(void)
 {	
+	//exe->push_arg_complex<player*>(plr, qLib::Script::AS_OBJECT);
+	exe->ctx->SetArgObject(0, (player*)plr);
 	exe->exec();
 	exe->reset();
+	plr->move(0.3f);
 	
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	
-	draw(px, py);
+	draw(plr->getX(), plr->getY());
 	
     glutSwapBuffers();
 }
@@ -117,13 +198,17 @@ void PassiveMouse(int _x, int _y)
 int main(int argc, char **argv)
 {
 	engine = new qLib::Script::qScriptEngine();
+	engine->RegisterScriptable<player>();
 	
-	//REGISTER_GLOBAL_PROPERTY(engine, "int@ global_int_script", &global_int_native);
+	plr = new player(100, 100);
+	plr->setDir(1, 1);
+	
 	engine->RegisterGlobalProperty("int px", &px);
 	engine->RegisterGlobalProperty("int py", &py);
 	
-	mod = engine->pGetScriptModule("test");
+	mod = engine->pGetScriptModule("patrol_module");
 	
+	/*
 	const char *script =
 	"int state = 0;									"
 	"void test()									"
@@ -140,6 +225,21 @@ int main(int argc, char **argv)
 	"	else if(state == 2 && px == 100) state++;	"
 	"	else if(state == 3 && py == 100) state=0;	"
 	"}												";
+	*/
+	
+	const char *script =
+	"int state = 0;															"
+	"void patrol(player &plr)												"
+	"{																		"
+	"	if(plr.getX() >= 400 && plr.getY() <= 100)							"
+	"		plr.setDir(0,1);												"
+	"	else if(plr.getY() >= 400  && plr.getX() >= 400)					"
+	"		plr.setDir(-1,0);												"
+	"	else if(plr.getX() <= 100 && plr.getY() >= 400)						"
+	"		plr.setDir(0,-1);												"
+	"	else if(plr.getY() <= 100 && plr.getX() <= 100)						"
+	"		plr.setDir(1,0);												"
+	"}																		";
 	
 	int res = mod->addSection((char*)script);
 	
@@ -149,7 +249,7 @@ int main(int argc, char **argv)
 		return -1;
 	}
 	
-	exe = engine->pGetScriptExec("test", "void test()");
+	exe = engine->pGetScriptExec("patrol_module", "void patrol(player &plr)");
 	
 	glutInit(&argc, argv);
 	
