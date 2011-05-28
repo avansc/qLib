@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:qLib_Examples/qLib_Examples.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:AngelSript/AngelScript.xcodeproj">
    </FileRef>
    <FileRef
