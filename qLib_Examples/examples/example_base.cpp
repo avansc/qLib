@@ -12,7 +12,7 @@ static int example_count = 0;
 static int mx;
 static int my;
 
-static char keys[255];
+char keys[255];
 
 static void run_example(qLibExample *example);
 
@@ -147,6 +147,7 @@ static void glutStuff(int argc, const char *argv[])
 extern qLibExample example_1_load_scripts;
 extern qLibExample example_2_register_variables;
 extern qLibExample example_3_register_classes;
+extern qLibExample example_4_events_native;
 
 int main(int argc, const char **argv)
 {
@@ -154,7 +155,8 @@ int main(int argc, const char **argv)
 	{
 		example_1_load_scripts,
 		example_2_register_variables,
-		example_3_register_classes
+		example_3_register_classes,
+		example_4_events_native
 	};
 	
 	examples = example_list;

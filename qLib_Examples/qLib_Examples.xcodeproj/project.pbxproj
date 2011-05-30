@@ -14,6 +14,7 @@
 		0196D0601390EC4A00B000E7 /* libqlib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0196D05F1390EC4A00B000E7 /* libqlib.a */; };
 		0196D0631390EFD500B000E7 /* example_2_register_variables.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0196D0611390EFD500B000E7 /* example_2_register_variables.cpp */; };
 		0196D0831390F32700B000E7 /* example_3_register_classes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0196D0811390F32700B000E7 /* example_3_register_classes.cpp */; };
+		01D0E2101393EFF6003EE851 /* example_4_events_native.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01D0E20E1393EFF6003EE851 /* example_4_events_native.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +41,8 @@
 		0196D0621390EFD500B000E7 /* example_2_register_variables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = example_2_register_variables.h; sourceTree = "<group>"; };
 		0196D0811390F32700B000E7 /* example_3_register_classes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = example_3_register_classes.cpp; sourceTree = "<group>"; };
 		0196D0821390F32700B000E7 /* example_3_register_classes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = example_3_register_classes.h; sourceTree = "<group>"; };
+		01D0E20E1393EFF6003EE851 /* example_4_events_native.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = example_4_events_native.cpp; sourceTree = "<group>"; };
+		01D0E20F1393EFF6003EE851 /* example_4_events_native.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = example_4_events_native.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +102,8 @@
 		012B9F7A13908D8C00D8BD95 /* example_4_events_native */ = {
 			isa = PBXGroup;
 			children = (
+				01D0E20E1393EFF6003EE851 /* example_4_events_native.cpp */,
+				01D0E20F1393EFF6003EE851 /* example_4_events_native.h */,
 			);
 			path = example_4_events_native;
 			sourceTree = "<group>";
@@ -188,6 +193,7 @@
 				0196D0591390EB6D00B000E7 /* example_base.cpp in Sources */,
 				0196D0631390EFD500B000E7 /* example_2_register_variables.cpp in Sources */,
 				0196D0831390F32700B000E7 /* example_3_register_classes.cpp in Sources */,
+				01D0E2101393EFF6003EE851 /* example_4_events_native.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

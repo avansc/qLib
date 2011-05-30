@@ -41,6 +41,7 @@ namespace qLib
 	namespace Event
 	{
 		class qEvent;
+		class qObject;
 
 		class qEventHandler : public qLib::Util::qComponent
 		{
@@ -49,6 +50,7 @@ namespace qLib
 			virtual ~qEventHandler(){};
 			
 			virtual void ON_EVENT(const qEvent &_evt);
+			virtual void ON_EVENT(const qEvent &_evt, const qObject &_obj);
 		private:
 		};
 	}

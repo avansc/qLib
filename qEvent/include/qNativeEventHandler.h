@@ -1,6 +1,6 @@
 /*
- *  qEvent
- *  qEventLib.h
+ *  qEventLib
+ *  qNativeEventHandler.h
  *
  *	Copyright (c) 2001, AVS
  *	All rights reserved.
@@ -31,15 +31,38 @@
  *	SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef _qEventLib_h
-#define _qEventLib_h
+#ifndef _qNativeEventHandler_h
+#define	_qNativeEventHandler_h
 
-#include "qEvent.h"
 #include "qEventHandler.h"
-#include "qEventListener.h"
-#include "qEventMonitor.h"
-#include "qEventRegistry.h"
-#include "qKeyEventListener.h"
-#include "qNativeEventHandler.h"
+
+namespace qLib
+{
+	namespace Util
+	{
+		class qObject;
+	}
+	
+	namespace Event
+	{
+		class qEvent;
+		typedef void(*EVENT_FUNC_PTR)(const qEvent&, const qLib::Util::qObject&);
+		
+		class qNativeEventHandler : public qEventHandler
+		{
+		public:
+			qNativeEventHandler();
+			virtual ~qNativeEventHandler(){};
+			
+			virtual void ON_EVENT(const qEvent &_evt);
+			virtual void ON_EVENT(const qEvent &_evt, const qLib::Util::qObject &_obj);
+			
+			void set_event_ptr(EVENT_FUNC_PTR _ptr);
+			
+		private:
+			EVENT_FUNC_PTR on_event_ptr;
+		};
+	}
+}
 
 #endif

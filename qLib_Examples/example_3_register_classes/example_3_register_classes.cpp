@@ -17,31 +17,6 @@
 #include "qScriptEngine.h"
 #include "qScriptModule.h"
 
-class player : public qLib::Util::qComponent
-{
-public:
-	player();
-	player(const float &_x, const float &_y);
-	virtual ~player(){};
-	
-	float getX() { return this->x; }
-	float getY() { return this->y; }
-	
-	int getXDir() { return this->dx; }
-	int getYDir() { return this->dy; }
-	
-	void setX(float _x) { this->x = _x; }
-	void setY(float _y) { this->y = _y; }
-	
-	void move(float dt);
-	void setDir(int _dx, int _dy);
-	
-	virtual void REGISTER_SCRIPTABLES(qScriptEngine *engine);
-private:
-	float x,y;
-	int dx, dy;
-};
-
 player::player()
 :	x(0),
 y(0),
@@ -95,13 +70,13 @@ static qLib::Script::qScriptEngine *engine;
 static qLib::Script::qScriptModule *mod;
 static qLib::Script::qScriptExec *exe;
 
-int mx;
-int my;
+static int mx;
+static int my;
 
-int px = 100;
-int py = 100;
+static int px = 100;
+static int py = 100;
 
-player *plr;
+static player *plr;
 
 static const char *script =
 "void patrol(player &plr)"
@@ -133,7 +108,7 @@ static void drawString(int x, int y, const char *str)
 	}
 }
 
-void draw(int x, int y)
+static void draw(int x, int y)
 {
 	glColor3f(1.0f, 1.0f, 1.0f);
 	glPushMatrix();
