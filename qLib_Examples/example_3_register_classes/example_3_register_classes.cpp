@@ -154,6 +154,9 @@ static void update(float dt)
 	exe->reset();
 	plr->move(0.3f);
 	draw(plr->getX(), plr->getY());
+	
+	drawString(plr->getX()-10, plr->getY()-25, "Scriptable class");
+	
 	char data[200];
 	sprintf(data, "pos = <%f,%f>", plr->getX(), plr->getY());
 	drawString(10, 10, data);
