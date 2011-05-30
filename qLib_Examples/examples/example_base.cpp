@@ -9,9 +9,8 @@ static qLibExample *current_example;
 static int example_index = 0;
 static int example_count = 0;
 
-static int mx;
-static int my;
-
+int mx;
+int my;
 char keys[255];
 
 static void run_example(qLibExample *example);
@@ -148,6 +147,7 @@ extern qLibExample example_1_load_scripts;
 extern qLibExample example_2_register_variables;
 extern qLibExample example_3_register_classes;
 extern qLibExample example_4_events_native;
+extern qLibExample example_5_events_script;
 
 int main(int argc, const char **argv)
 {
@@ -156,7 +156,8 @@ int main(int argc, const char **argv)
 		example_1_load_scripts,
 		example_2_register_variables,
 		example_3_register_classes,
-		example_4_events_native
+		example_4_events_native,
+		example_5_events_script
 	};
 	
 	examples = example_list;

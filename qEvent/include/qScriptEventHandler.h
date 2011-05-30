@@ -1,6 +1,6 @@
 /*
  *  qEventLib
- *  qEvent.h
+ *  qScriptEventHandler.h
  *
  *	Copyright (c) 2001, AVS
  *	All rights reserved.
@@ -31,89 +31,41 @@
  *	SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef _qEvent_h
-#define _qEvent_h
+#ifndef _qScriptEventHandler_h
+#define	qScriptEventHandler_h
 
-#include "qObject.h"
+#include "qEventHandler.h"
 
 namespace qLib
 {
+	namespace Util
+	{
+		class qObject;
+	}
+	
+	namespace Script
+	{
+		class qScriptEngine;
+		class qScriptExec;
+	}
+	
 	namespace Event
 	{
-		enum event_type
-		{
-			EVENT_DEFAULT = 0,
-			EVENT_KEY,
-			EVENT_MOUSE,
-			EVENT_GAME,
-			EVENT_USER,
-			EVENT_MONITOR
-		};
-
-		enum key_state
-		{
-			KEY_UP = 0,
-			KEY_PRESSED,
-			KEY_DOWN,
-			KEY_RELEASED
-		};
-
-		struct key_data
-		{
-			unsigned int key;
-			unsigned int state;
-		};
-
-		struct mouse_data
-		{
-			float x;
-			float y;
-			float dx;
-			float dy;
-		};
-
-		struct default_data
-		{
-			void *data;
-		};
-
-		typedef struct event_data
-		{
-			event_type type;
-			unsigned int key;
-			union data
-			{
-				default_data default_d;
-				key_data key_d;
-				mouse_data mouse_d; 
-				default_data game_d;
-				default_data user_d;
-			};
-			data event_data;
-			
-		} event_data;
-
-		class qEvent : public qLib::Util::qObject
+		class qEvent;
+		
+		class qScriptEventHandler : public qEventHandler
 		{
 		public:
-			qEvent();
-			qEvent(unsigned int _param1, unsigned int _param2, event_type _type);
-			event_type type();
-			unsigned int key();
+			qScriptEventHandler();
+			virtual ~qScriptEventHandler(){};
 			
-			unsigned int get_key_code();
-			unsigned int get_key_state();
-			unsigned int get_mouse_x();
-			unsigned int get_mouse_y();
-			unsigned int get_mouse_dx();
-			unsigned int get_mouse_dy();
-			void *get_game_data();
-			void *get_user_data();
+			virtual void ON_EVENT(const qEvent &_evt);
+			virtual void ON_EVENT(const qEvent &_evt, const qLib::Util::qObject &_obj);
 			
-			virtual void REGISTER_SCRIPTABLES(qScriptEngine *engine);
+			void set_script_exe(qLib::Script::qScriptExec *_exe);
 			
-		//private:
-			event_data data;
+		private:
+			qLib::Script::qScriptExec *exe;
 		};
 	}
 }

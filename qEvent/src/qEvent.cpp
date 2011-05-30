@@ -75,5 +75,51 @@ namespace qLib
 		{
 			return this->data.key;
 		}
+		
+		unsigned int qEvent::get_key_code()
+		{
+			return this->data.event_data.key_d.key;
+		}
+		
+		unsigned int qEvent::get_key_state()
+		{
+			return this->data.event_data.key_d.state;
+		}
+		
+		unsigned int qEvent::get_mouse_x()
+		{
+			return this->data.event_data.mouse_d.x;
+		}
+		
+		unsigned int qEvent::get_mouse_y()
+		{
+			return this->data.event_data.mouse_d.y;
+		}
+		
+		unsigned int qEvent::get_mouse_dx()
+		{
+			return this->data.event_data.mouse_d.dx;
+		}
+		
+		unsigned int qEvent::get_mouse_dy()
+		{
+			return this->data.event_data.mouse_d.dy;
+		}
+		
+		
+		
+		void qEvent::REGISTER_SCRIPTABLES(qScriptEngine *engine)
+		{
+			REGISTER_CLASS(engine, "qEvent", qEvent);
+			
+			REGISTER_METHOD(engine, "qEvent", qEvent, "uint type()", type);
+			REGISTER_METHOD(engine, "qEvent", qEvent, "uint key()", key);
+			REGISTER_METHOD(engine, "qEvent", qEvent, "uint get_key_code()", get_key_code);
+			REGISTER_METHOD(engine, "qEvent", qEvent, "uint get_key_state()", get_key_state);
+			REGISTER_METHOD(engine, "qEvent", qEvent, "uint get_mouse_x()", get_mouse_x);
+			REGISTER_METHOD(engine, "qEvent", qEvent, "uint get_mouse_y()", get_mouse_y);
+			REGISTER_METHOD(engine, "qEvent", qEvent, "uint get_mouse_dx()", get_mouse_dx);
+			REGISTER_METHOD(engine, "qEvent", qEvent, "uint get_mouse_dy()", get_mouse_dy);
+		}
 	}
 }

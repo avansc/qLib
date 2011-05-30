@@ -31,6 +31,9 @@ public:
 	void setDir(int _dx, int _dy);
 	
 	virtual void REGISTER_SCRIPTABLES(qScriptEngine *engine);
+	
+	static player *convert(qLib::Util::qObject *ref);
+	
 private:
 	float x,y;
 	int dx, dy;

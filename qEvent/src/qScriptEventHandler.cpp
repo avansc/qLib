@@ -1,6 +1,6 @@
 /*
  *  qEventLib
- *  qEvent.h
+ *  qNativeEventHandler.cpp
  *
  *	Copyright (c) 2001, AVS
  *	All rights reserved.
@@ -31,91 +31,42 @@
  *	SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef _qEvent_h
-#define _qEvent_h
-
-#include "qObject.h"
+#include "qScriptEventHandler.h"
 
 namespace qLib
 {
 	namespace Event
 	{
-		enum event_type
+		qScriptEventHandler::qScriptEventHandler()
+		:	exe(NULL)
 		{
-			EVENT_DEFAULT = 0,
-			EVENT_KEY,
-			EVENT_MOUSE,
-			EVENT_GAME,
-			EVENT_USER,
-			EVENT_MONITOR
-		};
-
-		enum key_state
+		}
+		
+		void qScriptEventHandler::ON_EVENT(const qEvent &_evt)
+		{			
+			this->ON_EVENT(_evt, *((qLib::Util::qObject*)this->getRoot()));
+		}
+		
+		void qScriptEventHandler::ON_EVENT(const qEvent &_evt, const qLib::Util::qObject &_obj)
 		{
-			KEY_UP = 0,
-			KEY_PRESSED,
-			KEY_DOWN,
-			KEY_RELEASED
-		};
-
-		struct key_data
-		{
-			unsigned int key;
-			unsigned int state;
-		};
-
-		struct mouse_data
-		{
-			float x;
-			float y;
-			float dx;
-			float dy;
-		};
-
-		struct default_data
-		{
-			void *data;
-		};
-
-		typedef struct event_data
-		{
-			event_type type;
-			unsigned int key;
-			union data
+			if(this->exe == NULL)
 			{
-				default_data default_d;
-				key_data key_d;
-				mouse_data mouse_d; 
-				default_data game_d;
-				default_data user_d;
-			};
-			data event_data;
+				return;
+			}
 			
-		} event_data;
-
-		class qEvent : public qLib::Util::qObject
+			// Script call goes here.
+			//this->on_event_ptr(_evt, _obj);
+			exe->ctx->SetArgObject(0, (void*)&_evt);
+			exe->ctx->SetArgObject(1, (void*)&_obj);
+			exe->exec();
+			exe->reset();
+			
+			
+		}
+		
+		void qScriptEventHandler::set_script_exe(qLib::Script::qScriptExec *_exe)
 		{
-		public:
-			qEvent();
-			qEvent(unsigned int _param1, unsigned int _param2, event_type _type);
-			event_type type();
-			unsigned int key();
-			
-			unsigned int get_key_code();
-			unsigned int get_key_state();
-			unsigned int get_mouse_x();
-			unsigned int get_mouse_y();
-			unsigned int get_mouse_dx();
-			unsigned int get_mouse_dy();
-			void *get_game_data();
-			void *get_user_data();
-			
-			virtual void REGISTER_SCRIPTABLES(qScriptEngine *engine);
-			
-		//private:
-			event_data data;
-		};
+			this->exe = _exe;
+		}
 	}
 }
-
-#endif

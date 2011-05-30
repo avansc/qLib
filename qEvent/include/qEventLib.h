@@ -41,5 +41,6 @@
 #include "qEventRegistry.h"
 #include "qKeyEventListener.h"
 #include "qNativeEventHandler.h"
+#include "qScriptEventHandler.h"
 
 #endif

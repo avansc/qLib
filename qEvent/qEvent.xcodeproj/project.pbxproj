@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01CE8E9B13940D1C0091F377 /* qScriptEventHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 01CE8E9A13940D1C0091F377 /* qScriptEventHandler.h */; };
+		01CE8E9E13940DFC0091F377 /* qScriptEventHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01CE8E9D13940DFC0091F377 /* qScriptEventHandler.cpp */; };
 		01D0E20A1393E70E003EE851 /* qNativeEventHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 01D0E2091393E70E003EE851 /* qNativeEventHandler.h */; };
 		01D0E20D1393E7FB003EE851 /* qNativeEventHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01D0E20C1393E7FB003EE851 /* qNativeEventHandler.cpp */; };
 		01F39DD413903765004C3691 /* qEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 01F39DC513903765004C3691 /* qEvent.h */; };
@@ -27,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01CE8E9A13940D1C0091F377 /* qScriptEventHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qScriptEventHandler.h; sourceTree = "<group>"; };
+		01CE8E9D13940DFC0091F377 /* qScriptEventHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = qScriptEventHandler.cpp; sourceTree = "<group>"; };
 		01D0E2091393E70E003EE851 /* qNativeEventHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qNativeEventHandler.h; sourceTree = "<group>"; };
 		01D0E20C1393E7FB003EE851 /* qNativeEventHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = qNativeEventHandler.cpp; sourceTree = "<group>"; };
 		01F39DBF1390363B004C3691 /* libqeventlib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libqeventlib.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,6 +91,7 @@
 				01F39DCB13903765004C3691 /* qKeyEventListener.h */,
 				01F39DF813904326004C3691 /* qEventLib.h */,
 				01D0E2091393E70E003EE851 /* qNativeEventHandler.h */,
+				01CE8E9A13940D1C0091F377 /* qScriptEventHandler.h */,
 			);
 			path = include;
 			sourceTree = "<group>";
@@ -102,6 +107,7 @@
 				01F39DD213903765004C3691 /* qFactory.cpp */,
 				01F39DD313903765004C3691 /* qKeyEventListener.cpp */,
 				01D0E20C1393E7FB003EE851 /* qNativeEventHandler.cpp */,
+				01CE8E9D13940DFC0091F377 /* qScriptEventHandler.cpp */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -122,6 +128,7 @@
 				01F39DDA13903765004C3691 /* qKeyEventListener.h in Headers */,
 				01F39DF913904327004C3691 /* qEventLib.h in Headers */,
 				01D0E20A1393E70E003EE851 /* qNativeEventHandler.h in Headers */,
+				01CE8E9B13940D1C0091F377 /* qScriptEventHandler.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,6 +187,7 @@
 				01F39DE013903765004C3691 /* qFactory.cpp in Sources */,
 				01F39DE113903765004C3691 /* qKeyEventListener.cpp in Sources */,
 				01D0E20D1393E7FB003EE851 /* qNativeEventHandler.cpp in Sources */,
+				01CE8E9E13940DFC0091F377 /* qScriptEventHandler.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,12 +1,12 @@
 //
-//  example_4_events_native.cpp
+//  example_5_events_script.cpp
 //  qLib_Examples
 //
 //  Created by avansc on 5/30/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#include "example_4_events_native.h"
+#include "example_5_events_script.h"
 
 #include <GLUT/GLUT.h>
 
@@ -15,6 +15,8 @@
 #include "qLib.h"
 
 #include "qEventHandler.h"
+#include "qScriptEngine.h"
+#include "qScriptModule.h"
 
 //reuse class from example_3_register_classes
 #include "example_3_register_classes.h"
@@ -33,40 +35,53 @@ static player *plr;
 
 extern char keys[255];
 
+static qLib::Script::qScriptEngine *engine;
+static qLib::Script::qScriptModule *mod;
+static qLib::Script::qScriptExec *exe;
 
-static void native_event(const qLib::Event::qEvent &_evt, const qLib::Util::qObject &_obj)
-{
-	if(_evt.data.type == qLib::Event::EVENT_KEY)
-	{
-		switch(_evt.data.event_data.key_d.key)
-		{
-			case 'a' :
-			{
-				((player*)&_obj)->setDir(-1, 0);
-				plr->move(1);
-				break;
-			}
-			case 'd' :
-			{
-				((player*)&_obj)->setDir(1, 0);
-				plr->move(1);
-				break;
-			}
-			case 'w' :
-			{
-				((player*)&_obj)->setDir(0, 1);
-				plr->move(1);
-				break;
-			}
-			case 's' :
-			{
-				((player*)&_obj)->setDir(0, -1);
-				plr->move(1);
-				break;
-			}
-		}
-	}
-}
+static const char *script =
+"enum KEYS"
+"{"
+"a = 97,"
+"b,"
+"c,"
+"d,"
+"e,"
+"f,"
+"g,"
+"h,"
+"i,"
+"j,"
+"k,"
+"l,"
+"m,"
+"n,"
+"o,"
+"p,"
+"q,"
+"r,"
+"s,"
+"t,"
+"u,"
+"v,"
+"w,"
+"x,"
+"y,"
+"z"
+"}"
+"void ON_EVENT(qEvent &evt, qObject &obj)		"
+"{												"
+"												"
+"	player@ ref = player_convert(obj);			"
+"	switch(evt.get_key_code())					"
+"	{											"
+"		case KEYS::a :{ref.setDir(-1,0); break;}"
+"		case KEYS::d :{ref.setDir(1,0); break;}	"
+"		case KEYS::s :{ref.setDir(0,-1); break;}"
+"		case KEYS::w :{ref.setDir(0,1); break;}	"
+"	}											"
+"	ref.move(1);								"
+"}												";
 
 static void proc_events()
 {	
@@ -125,13 +140,34 @@ static void update(float dt)
 
 static void init(void)
 {	
+	engine = new qLib::Script::qScriptEngine();
+	engine->RegisterScriptable<player>();
+	engine->RegisterScriptable<qLib::Util::qObject>();
+	engine->RegisterScriptable<qLib::Event::qEvent>();
+	
+	mod = engine->pGetScriptModule("event");
+	
+	if(mod->addSection((char*)script) < 0)
+	{
+		printf("Failed to get script module\n");
+		exit(-1);
+	}
+	
+	if(mod->buildScript() < 0)
+	{
+		printf("Failed to build script\n");
+		exit(-1);
+	}
+	
+	exe = engine->pGetScriptExec("event", "void ON_EVENT(qEvent &evt, qObject &obj)");
+	
 	plr = new player(100, 100);
 	plr->setDir(1, 1);
 	
 	evt_reg = new qLib::Event::qEventRegistry();
 	qLib::Event::qEventListener *L = new qLib::Event::qKeyEventListener();
-	qLib::Event::qEventHandler *H = new qLib::Event::qNativeEventHandler();
-	((qLib::Event::qNativeEventHandler*)(H))->set_event_ptr(native_event);
+	qLib::Event::qEventHandler *H = new qLib::Event::qScriptEventHandler();
+	((qLib::Event::qScriptEventHandler*)H)->set_script_exe(exe);
 	
 	evt_reg->register_pair(L, H, plr);
 	
@@ -142,8 +178,8 @@ static void destroy(void)
 	delete plr;
 }
 
-qLibExample example_4_events_native = {
-	"Native Events",
+qLibExample example_5_events_script = {
+	"Script Events",
 	init,
 	update,
 	destroy,

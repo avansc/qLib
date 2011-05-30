@@ -48,6 +48,10 @@ void player::setDir(int _dx, int _dy)
 
 void player::REGISTER_SCRIPTABLES(qScriptEngine *engine)
 {
+	//deps//
+	engine->RegisterScriptable<qLib::Util::qObject>();
+	////////
+	
 	REGISTER_CLASS(engine, "player", player);
 	
 	
@@ -62,6 +66,18 @@ void player::REGISTER_SCRIPTABLES(qScriptEngine *engine)
 	
 	REGISTER_METHOD(engine, "player", player, "void move(float _dt)", move);
 	REGISTER_METHOD(engine, "player", player, "void setDir(int _dx, int _dy)", setDir);
+	
+	REGISTER_GLOBAL_FUNCTION(engine, "player@ player_convert(qObject@)", player::convert);
+	
+	//int r = engine->getEngine()->RegisterObjectMethod("player", "player@ player_convert(qObject@)", asMETHODPR(player, method2, (int, int&), void), asCALL_THISCALL); assert( r >= 0 );
+
+}
+
+player *player::convert(qLib::Util::qObject *ref)
+{
+	//&output = static_cast<player*>(&ref);
+	//&output = (player*)&ref;
+	return (player*)ref;
 }
 
 ///////////////////////////////////////////////////
