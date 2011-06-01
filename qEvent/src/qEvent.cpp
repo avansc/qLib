@@ -120,6 +120,20 @@ namespace qLib
 			REGISTER_METHOD(engine, "qEvent", qEvent, "uint get_mouse_y()", get_mouse_y);
 			REGISTER_METHOD(engine, "qEvent", qEvent, "uint get_mouse_dx()", get_mouse_dx);
 			REGISTER_METHOD(engine, "qEvent", qEvent, "uint get_mouse_dy()", get_mouse_dy);
+			
+			engine->getEngine()->RegisterEnum("event_type");
+			engine->getEngine()->RegisterEnumValue("event_type", "EVENT_DEFAULT", 0);
+			engine->getEngine()->RegisterEnumValue("event_type", "EVENT_KEY", 1);
+			engine->getEngine()->RegisterEnumValue("event_type", "EVENT_MOUSE", 2);
+			engine->getEngine()->RegisterEnumValue("event_type", "EVENT_GAME", 3);
+			engine->getEngine()->RegisterEnumValue("event_type", "EVENT_USER", 4);
+			engine->getEngine()->RegisterEnumValue("event_type", "EVENT_MONITOR", 5);
+			
+			engine->getEngine()->RegisterEnum("key_state");
+			engine->getEngine()->RegisterEnumValue("key_state", "KEY_UP", 0);
+			engine->getEngine()->RegisterEnumValue("key_state", "KEY_PRESSED", 1);
+			engine->getEngine()->RegisterEnumValue("key_state", "KEY_DOWN", 2);
+			engine->getEngine()->RegisterEnumValue("key_state", "KEY_RELEASED", 3);
 		}
 	}
 }

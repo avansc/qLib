@@ -75,12 +75,11 @@ static const char *script =
 "	player@ ref = player_convert(obj);			"
 "	switch(evt.get_key_code())					"
 "	{											"
-"		case KEYS::a :{ref.setDir(-1,0); break;}"
-"		case KEYS::d :{ref.setDir(1,0); break;}	"
-"		case KEYS::s :{ref.setDir(0,-1); break;}"
-"		case KEYS::w :{ref.setDir(0,1); break;}	"
+"		case KEYS::a :{ref.setDir(-1,0); ref.move(1); break;}"
+"		case KEYS::d :{ref.setDir(1,0); ref.move(1); break;}	"
+"		case KEYS::s :{ref.setDir(0,-1); ref.move(1); break;}"
+"		case KEYS::w :{ref.setDir(0,1); ref.move(1); break;}	"
 "	}											"
-"	ref.move(1);								"
 "}												";
 
 static void proc_events()

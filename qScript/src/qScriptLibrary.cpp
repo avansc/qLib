@@ -34,8 +34,6 @@
 #include "qScriptLibrary.h"
 
 
-//#include "qScriptLibrary.h"
-
 using namespace qLib::Script;
 
 qScriptLibrary::qScriptLibrary()
