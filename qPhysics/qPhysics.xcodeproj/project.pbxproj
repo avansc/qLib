@@ -1,0 +1,232 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0184A3B4139875E50015368D /* qWorld.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0184A3B3139875E50015368D /* qWorld.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0184A3A8139874770015368D /* qPhysicsLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = qPhysicsLib.h; sourceTree = "<group>"; };
+		0184A3A9139874E80015368D /* qWorld.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = qWorld.h; sourceTree = "<group>"; };
+		0184A3AE139875180015368D /* libqphysicslib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libqphysicslib.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		0184A3B3139875E50015368D /* qWorld.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = qWorld.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0184A3AB139875180015368D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0184A345139870570015368D = {
+			isa = PBXGroup;
+			children = (
+				0184A34E139870810015368D /* include */,
+				0184A34F139870810015368D /* src */,
+				0184A3AF139875180015368D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0184A34E139870810015368D /* include */ = {
+			isa = PBXGroup;
+			children = (
+				0184A3A8139874770015368D /* qPhysicsLib.h */,
+				0184A3A9139874E80015368D /* qWorld.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		0184A34F139870810015368D /* src */ = {
+			isa = PBXGroup;
+			children = (
+				0184A3B3139875E50015368D /* qWorld.cpp */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		0184A3AF139875180015368D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0184A3AE139875180015368D /* libqphysicslib.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0184A3AC139875180015368D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0184A3AD139875180015368D /* qphysicslib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0184A3B0139875180015368D /* Build configuration list for PBXNativeTarget "qphysicslib" */;
+			buildPhases = (
+				0184A3AA139875180015368D /* Sources */,
+				0184A3AB139875180015368D /* Frameworks */,
+				0184A3AC139875180015368D /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = qphysicslib;
+			productName = qphysicslib;
+			productReference = 0184A3AE139875180015368D /* libqphysicslib.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0184A347139870570015368D /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 0184A34A139870570015368D /* Build configuration list for PBXProject "qPhysics" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0184A345139870570015368D;
+			productRefGroup = 0184A3AF139875180015368D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0184A3AD139875180015368D /* qphysicslib */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0184A3AA139875180015368D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0184A3B4139875E50015368D /* qWorld.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0184A34C139870570015368D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		0184A34D139870570015368D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		0184A3B1139875180015368D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				EXECUTABLE_PREFIX = lib;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = 4.2;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"/usr/local/include/**",
+					"$(SRCROOT)/../qScript/include/",
+					"$(SRCROOT)/../qUtil/include/",
+					"$(SRCROOT)/../qEvent/include/",
+				);
+				LIBRARY_SEARCH_PATHS = "/usr/local/lib/**";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-lBulletCollision",
+					"-lBulletDynamics",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				VALID_ARCHS = i386;
+			};
+			name = Debug;
+		};
+		0184A3B2139875180015368D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EXECUTABLE_PREFIX = lib;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = 4.2;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"/usr/local/include/**",
+					"$(SRCROOT)/../qScript/include/",
+					"$(SRCROOT)/../qUtil/include/",
+					"$(SRCROOT)/../qEvent/include/",
+				);
+				LIBRARY_SEARCH_PATHS = "/usr/local/lib/**";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				OTHER_LDFLAGS = (
+					"-lBulletCollision",
+					"-lBulletDynamics",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				VALID_ARCHS = i386;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0184A34A139870570015368D /* Build configuration list for PBXProject "qPhysics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0184A34C139870570015368D /* Debug */,
+				0184A34D139870570015368D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0184A3B0139875180015368D /* Build configuration list for PBXNativeTarget "qphysicslib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0184A3B1139875180015368D /* Debug */,
+				0184A3B2139875180015368D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0184A347139870570015368D /* Project object */;
+}
