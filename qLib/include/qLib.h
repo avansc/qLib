@@ -37,6 +37,7 @@
 #include "qScriptLib.h"
 #include "qUtilLib.h"
 #include "qEventLib.h"
+#include "qPhysicsLib.h"
 
 /*namespace qLib
 {

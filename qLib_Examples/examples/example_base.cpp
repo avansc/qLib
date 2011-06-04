@@ -148,6 +148,7 @@ extern qLibExample example_2_register_variables;
 extern qLibExample example_3_register_classes;
 extern qLibExample example_4_events_native;
 extern qLibExample example_5_events_script;
+extern qLibExample example_6_physics_simple;
 
 int main(int argc, const char **argv)
 {
@@ -157,7 +158,8 @@ int main(int argc, const char **argv)
 		example_2_register_variables,
 		example_3_register_classes,
 		example_4_events_native,
-		example_5_events_script
+		example_5_events_script,
+		example_6_physics_simple
 	};
 	
 	examples = example_list;

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0183D033139A8ABE00F70CC3 /* BulletCollision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0183D031139A8ABE00F70CC3 /* BulletCollision.framework */; };
+		0183D034139A8ABE00F70CC3 /* BulletDynamics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0183D032139A8ABE00F70CC3 /* BulletDynamics.framework */; };
+		0183D037139A8AC500F70CC3 /* LinearMath.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0183D036139A8AC500F70CC3 /* LinearMath.framework */; };
 		0196D0591390EB6D00B000E7 /* example_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0196D0571390EB6D00B000E7 /* example_base.cpp */; };
 		0196D05A1390EB7800B000E7 /* example_1_load_scripts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0196D02E1390E9E200B000E7 /* example_1_load_scripts.cpp */; };
 		0196D05C1390EB8300B000E7 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0196D05B1390EB8300B000E7 /* GLUT.framework */; };
@@ -14,6 +17,7 @@
 		0196D0601390EC4A00B000E7 /* libqlib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0196D05F1390EC4A00B000E7 /* libqlib.a */; };
 		0196D0631390EFD500B000E7 /* example_2_register_variables.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0196D0611390EFD500B000E7 /* example_2_register_variables.cpp */; };
 		0196D0831390F32700B000E7 /* example_3_register_classes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0196D0811390F32700B000E7 /* example_3_register_classes.cpp */; };
+		01C16E4013992BDF0019D45E /* example_6_physics_simple.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01C16E3E13992BDF0019D45E /* example_6_physics_simple.cpp */; };
 		01CE8E98139404570091F377 /* example_5_events_script.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01CE8E96139404570091F377 /* example_5_events_script.cpp */; };
 		01D0E2101393EFF6003EE851 /* example_4_events_native.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01D0E20E1393EFF6003EE851 /* example_4_events_native.cpp */; };
 /* End PBXBuildFile section */
@@ -31,6 +35,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0183D031139A8ABE00F70CC3 /* BulletCollision.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BulletCollision.framework; path = SDKs/MacOSX10.6.sdk/Library/Frameworks/BulletCollision.framework; sourceTree = DEVELOPER_DIR; };
+		0183D032139A8ABE00F70CC3 /* BulletDynamics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BulletDynamics.framework; path = SDKs/MacOSX10.6.sdk/Library/Frameworks/BulletDynamics.framework; sourceTree = DEVELOPER_DIR; };
+		0183D036139A8AC500F70CC3 /* LinearMath.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LinearMath.framework; path = SDKs/MacOSX10.6.sdk/Library/Frameworks/LinearMath.framework; sourceTree = DEVELOPER_DIR; };
 		0196D02E1390E9E200B000E7 /* example_1_load_scripts.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = example_1_load_scripts.cpp; sourceTree = "<group>"; };
 		0196D04E1390EB4900B000E7 /* examples */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = examples; sourceTree = BUILT_PRODUCTS_DIR; };
 		0196D0571390EB6D00B000E7 /* example_base.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = example_base.cpp; sourceTree = "<group>"; };
@@ -42,6 +49,8 @@
 		0196D0621390EFD500B000E7 /* example_2_register_variables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = example_2_register_variables.h; sourceTree = "<group>"; };
 		0196D0811390F32700B000E7 /* example_3_register_classes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = example_3_register_classes.cpp; sourceTree = "<group>"; };
 		0196D0821390F32700B000E7 /* example_3_register_classes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = example_3_register_classes.h; sourceTree = "<group>"; };
+		01C16E3E13992BDF0019D45E /* example_6_physics_simple.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = example_6_physics_simple.cpp; sourceTree = "<group>"; };
+		01C16E3F13992BDF0019D45E /* example_6_physics_simple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = example_6_physics_simple.h; sourceTree = "<group>"; };
 		01CE8E96139404570091F377 /* example_5_events_script.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = example_5_events_script.cpp; sourceTree = "<group>"; };
 		01CE8E97139404570091F377 /* example_5_events_script.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = example_5_events_script.h; sourceTree = "<group>"; };
 		01D0E20E1393EFF6003EE851 /* example_4_events_native.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = example_4_events_native.cpp; sourceTree = "<group>"; };
@@ -53,6 +62,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0183D037139A8AC500F70CC3 /* LinearMath.framework in Frameworks */,
+				0183D033139A8ABE00F70CC3 /* BulletCollision.framework in Frameworks */,
+				0183D034139A8ABE00F70CC3 /* BulletDynamics.framework in Frameworks */,
 				0196D0601390EC4A00B000E7 /* libqlib.a in Frameworks */,
 				0196D05E1390EB8D00B000E7 /* OpenGL.framework in Frameworks */,
 				0196D05C1390EB8300B000E7 /* GLUT.framework in Frameworks */,
@@ -65,12 +77,16 @@
 		012B9F6E13908A5000D8BD95 = {
 			isa = PBXGroup;
 			children = (
+				0183D036139A8AC500F70CC3 /* LinearMath.framework */,
+				0183D031139A8ABE00F70CC3 /* BulletCollision.framework */,
+				0183D032139A8ABE00F70CC3 /* BulletDynamics.framework */,
 				0196D0861390F4AF00B000E7 /* Libraries */,
 				012B9F7713908D8C00D8BD95 /* example_1_load_scripts */,
 				012B9F7813908D8C00D8BD95 /* example_2_register_variables */,
 				012B9F7913908D8C00D8BD95 /* example_3_register_classes */,
 				012B9F7A13908D8C00D8BD95 /* example_4_events_native */,
 				012B9F7B13908D8C00D8BD95 /* example_5_events_script */,
+				01C16E3C13992BA60019D45E /* example_6_physics_simple */,
 				0196D0501390EB4900B000E7 /* examples */,
 				012B9F851390940A00D8BD95 /* Products */,
 			);
@@ -147,6 +163,15 @@
 			name = Libraries;
 			sourceTree = "<group>";
 		};
+		01C16E3C13992BA60019D45E /* example_6_physics_simple */ = {
+			isa = PBXGroup;
+			children = (
+				01C16E3E13992BDF0019D45E /* example_6_physics_simple.cpp */,
+				01C16E3F13992BDF0019D45E /* example_6_physics_simple.h */,
+			);
+			path = example_6_physics_simple;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -200,6 +225,7 @@
 				0196D0831390F32700B000E7 /* example_3_register_classes.cpp in Sources */,
 				01D0E2101393EFF6003EE851 /* example_4_events_native.cpp in Sources */,
 				01CE8E98139404570091F377 /* example_5_events_script.cpp in Sources */,
+				01C16E4013992BDF0019D45E /* example_6_physics_simple.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,7 +265,9 @@
 					"$(SRCROOT)/../qUtil/include/",
 					"$(SRCROOT)/../qEvent/include/",
 					"$(SRCROOT)/../qLib/include/",
-					/usr/local/include/,
+					/usr/local/include,
+					"$(SRCROOT)/../qPhysics/include/",
+					/usr/local/include/bullet/,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = YES;
@@ -267,7 +295,9 @@
 					"$(SRCROOT)/../qUtil/include/",
 					"$(SRCROOT)/../qEvent/include/",
 					"$(SRCROOT)/../qLib/include/",
-					/usr/local/include/,
+					/usr/local/include,
+					"$(SRCROOT)/../qPhysics/include/",
+					/usr/local/include/bullet/,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";

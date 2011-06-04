@@ -38,7 +38,40 @@ namespace qLib
 	namespace Physics
 	{
 		qWorld::qWorld()
+		:	m_dynamicsWorld(0),
+			m_pickConstraint(0),
+			m_defaultContactProcessingThreshold(BT_LARGE_FLOAT)
 		{
+		}
+		
+		void qWorld::update(const float &dt)
+		{
+			this->m_dynamicsWorld->stepSimulation(dt);
+		}
+		
+		btRigidBody *qWorld::createRigidBody(float mass, const btTransform &startTransform, btCollisionShape *shape)
+		{
+			btAssert((!shape || shape->getShapeType() != INVALID_SHAPE_PROXYTYPE));
+			
+			//rigidbody is dynamic if and only if mass is non zero, otherwise static
+			bool isDynamic = (mass != 0.f);
+			
+			btVector3 localInertia(0,0,0);
+			if (isDynamic)
+				shape->calculateLocalInertia(mass,localInertia);
+			
+			//using motionstate is recommended, it provides interpolation capabilities, and only synchronizes 'active' objects
+			
+			btDefaultMotionState* myMotionState = new btDefaultMotionState(startTransform);
+			
+			btRigidBody::btRigidBodyConstructionInfo cInfo(mass,myMotionState,shape,localInertia);
+			
+			btRigidBody* body = new btRigidBody(cInfo);
+			body->setContactProcessingThreshold(m_defaultContactProcessingThreshold);
+			
+			m_dynamicsWorld->addRigidBody(body);
+			
+			return body;
 		}
 	}
 }

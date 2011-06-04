@@ -34,4 +34,6 @@
 #ifndef _qPhysicsLib_h
 #define _qPhysicsLib_h
 
+#include "qWorld.h"
+
 #endif

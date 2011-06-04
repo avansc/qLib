@@ -63,8 +63,14 @@ namespace qLib
 		public:
 			qWorld();
 			virtual ~qWorld(){};
+			
+			void update(const float &dt);
+			
+			btRigidBody *createRigidBody(float mass, const btTransform &startTransform, btCollisionShape *shape);
 		//private:
 			
+			btScalar		m_defaultContactProcessingThreshold;
+
 			///this is the most important class
 			btDynamicsWorld*		m_dynamicsWorld;
 			

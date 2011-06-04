@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01C16E4313992CA90019D45E /* libqphysicslib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C16E4213992CA90019D45E /* libqphysicslib.a */; };
 		01D091E513907CAB005D9954 /* qLib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01D091E313907C9D005D9954 /* qLib.cpp */; };
 		01D091E913907CE5005D9954 /* libqeventlib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D091E613907CE5005D9954 /* libqeventlib.a */; };
 		01D091EA13907CE5005D9954 /* libqscriptlib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D091E713907CE5005D9954 /* libqscriptlib.a */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01C16E4213992CA90019D45E /* libqphysicslib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libqphysicslib.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		01D091E313907C9D005D9954 /* qLib.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = qLib.cpp; sourceTree = "<group>"; };
 		01D091E613907CE5005D9954 /* libqeventlib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libqeventlib.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		01D091E713907CE5005D9954 /* libqscriptlib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libqscriptlib.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -28,6 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01C16E4313992CA90019D45E /* libqphysicslib.a in Frameworks */,
 				01D091E913907CE5005D9954 /* libqeventlib.a in Frameworks */,
 				01D091EA13907CE5005D9954 /* libqscriptlib.a in Frameworks */,
 				01D091EB13907CE5005D9954 /* libqutillib.a in Frameworks */,
@@ -40,6 +43,7 @@
 		01F39DE213904265004C3691 = {
 			isa = PBXGroup;
 			children = (
+				01C16E4213992CA90019D45E /* libqphysicslib.a */,
 				01D091E613907CE5005D9954 /* libqeventlib.a */,
 				01D091E713907CE5005D9954 /* libqscriptlib.a */,
 				01D091E813907CE5005D9954 /* libqutillib.a */,
@@ -172,6 +176,7 @@
 					"$(SRCROOT)/../qScript/include/",
 					"$(SRCROOT)/../qUtil/include/",
 					"$(SRCROOT)/../qEvent/include/",
+					"$(SRCROOT)/../qPhysics/include/",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = YES;
@@ -200,6 +205,7 @@
 					"$(SRCROOT)/../qScript/include/",
 					"$(SRCROOT)/../qUtil/include/",
 					"$(SRCROOT)/../qEvent/include/",
+					"$(SRCROOT)/../qPhysics/include/",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
