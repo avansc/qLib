@@ -31,6 +31,15 @@
  *	SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include "BulletCollision/CollisionShapes/btBox2dShape.h"
+#include "BulletCollision/CollisionDispatch/btEmptyCollisionAlgorithm.h"
+#include "BulletCollision/CollisionDispatch/btBox2dBox2dCollisionAlgorithm.h"
+#include "BulletCollision/CollisionDispatch/btConvex2dConvex2dAlgorithm.h"
+
+#include "BulletCollision/CollisionShapes/btBox2dShape.h"
+#include "BulletCollision/CollisionShapes/btConvex2dShape.h"
+#include "BulletCollision/NarrowPhaseCollision/btMinkowskiPenetrationDepthSolver.h"
+
 #include "qWorld.h"
 
 namespace qLib
@@ -42,6 +51,28 @@ namespace qLib
 			m_pickConstraint(0),
 			m_defaultContactProcessingThreshold(BT_LARGE_FLOAT)
 		{
+			this->m_broadphase = new btDbvtBroadphase();
+			this->m_collisionConfiguration = new btDefaultCollisionConfiguration();
+			this->m_dispatcher = new btCollisionDispatcher(this->m_collisionConfiguration);
+			
+			btVoronoiSimplexSolver* simplex = new btVoronoiSimplexSolver();
+			btMinkowskiPenetrationDepthSolver* pdSolver = new btMinkowskiPenetrationDepthSolver();
+			
+			
+			btConvex2dConvex2dAlgorithm::CreateFunc* convexAlgo2d = new btConvex2dConvex2dAlgorithm::CreateFunc(simplex,pdSolver);
+			
+			this->m_dispatcher->registerCollisionCreateFunc(CONVEX_2D_SHAPE_PROXYTYPE,CONVEX_2D_SHAPE_PROXYTYPE,convexAlgo2d);
+			this->m_dispatcher->registerCollisionCreateFunc(BOX_2D_SHAPE_PROXYTYPE,CONVEX_2D_SHAPE_PROXYTYPE,convexAlgo2d);
+			this->m_dispatcher->registerCollisionCreateFunc(CONVEX_2D_SHAPE_PROXYTYPE,BOX_2D_SHAPE_PROXYTYPE,convexAlgo2d);
+			this->m_dispatcher->registerCollisionCreateFunc(BOX_2D_SHAPE_PROXYTYPE,BOX_2D_SHAPE_PROXYTYPE,new btBox2dBox2dCollisionAlgorithm::CreateFunc());
+			
+			this->m_solver = new btSequentialImpulseConstraintSolver;
+			this->m_dynamicsWorld = new btDiscreteDynamicsWorld(this->m_dispatcher,
+																this->m_broadphase,
+																this->m_solver,
+																this->m_collisionConfiguration);
+			
+			this->m_dynamicsWorld->setGravity(btVector3(0,-10,0));
 		}
 		
 		void qWorld::update(const float &dt)

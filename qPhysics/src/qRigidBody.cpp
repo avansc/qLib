@@ -1,6 +1,6 @@
 /*
  *  qPhysics
- *  qPhysicsLib.h
+ *  qRigidBody.cpp
  *
  *	Copyright (c) 2001, AVS
  *	All rights reserved.
@@ -31,10 +31,44 @@
  *	SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef _qPhysicsLib_h
-#define _qPhysicsLib_h
-
-#include "qWorld.h"
 #include "qRigidBody.h"
 
-#endif
+namespace qLib
+{
+	namespace Physics
+	{
+		qRigidBody::qRigidBody()
+		{
+			btCollisionShape* shape = new btSphereShape(1);
+			btDefaultMotionState* state = new btDefaultMotionState(btTransform(btQuaternion(0,0,0,1),btVector3(0,50,0)));
+			btScalar mass = 1;
+			btVector3 fallInertia(0,0,0);
+			shape->calculateLocalInertia(mass,fallInertia);
+			btRigidBody::btRigidBodyConstructionInfo fallRigidBodyCI(mass,state,shape,fallInertia);
+			this->body = new btRigidBody(fallRigidBodyCI);
+		}
+		
+		qRigidBody::qRigidBody(btCollisionShape *shape, btDefaultMotionState *state, btScalar mass)
+		{
+			btVector3 fallInertia(0,0,0);
+			if(mass > 0)
+			{
+				shape->calculateLocalInertia(mass,fallInertia);
+			}
+			btRigidBody::btRigidBodyConstructionInfo fallRigidBodyCI(mass,state,shape,fallInertia);
+			this->body = new btRigidBody(fallRigidBodyCI);
+		}
+		
+		btRigidBody *qRigidBody::getBody()
+		{
+			return this->body;
+		}
+		
+		btTransform qRigidBody::getTransformation()
+		{
+			btTransform trans;
+			this->body->getMotionState()->getWorldTransform(trans);
+			return trans;
+		}
+	}
+}

@@ -10,7 +10,9 @@
 		0183D02D139A8A9300F70CC3 /* BulletCollision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0183D02B139A8A9300F70CC3 /* BulletCollision.framework */; };
 		0183D02E139A8A9300F70CC3 /* BulletDynamics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0183D02C139A8A9300F70CC3 /* BulletDynamics.framework */; };
 		0183D030139A8A9900F70CC3 /* LinearMath.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0183D02F139A8A9900F70CC3 /* LinearMath.framework */; };
+		0183D039139A8B6400F70CC3 /* qRigidBody.h in Headers */ = {isa = PBXBuildFile; fileRef = 0183D038139A8B6400F70CC3 /* qRigidBody.h */; };
 		0184A3B4139875E50015368D /* qWorld.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0184A3B3139875E50015368D /* qWorld.cpp */; };
+		0199DBED139A8C7F000E65B0 /* qRigidBody.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0199DBEC139A8C7F000E65B0 /* qRigidBody.cpp */; };
 		01C16E1A139928F00019D45E /* libqutillib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C16E19139928F00019D45E /* libqutillib.a */; };
 /* End PBXBuildFile section */
 
@@ -18,10 +20,12 @@
 		0183D02B139A8A9300F70CC3 /* BulletCollision.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BulletCollision.framework; path = SDKs/MacOSX10.6.sdk/Library/Frameworks/BulletCollision.framework; sourceTree = DEVELOPER_DIR; };
 		0183D02C139A8A9300F70CC3 /* BulletDynamics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BulletDynamics.framework; path = SDKs/MacOSX10.6.sdk/Library/Frameworks/BulletDynamics.framework; sourceTree = DEVELOPER_DIR; };
 		0183D02F139A8A9900F70CC3 /* LinearMath.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LinearMath.framework; path = SDKs/MacOSX10.6.sdk/Library/Frameworks/LinearMath.framework; sourceTree = DEVELOPER_DIR; };
+		0183D038139A8B6400F70CC3 /* qRigidBody.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qRigidBody.h; sourceTree = "<group>"; };
 		0184A3A8139874770015368D /* qPhysicsLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = qPhysicsLib.h; sourceTree = "<group>"; };
 		0184A3A9139874E80015368D /* qWorld.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = qWorld.h; sourceTree = "<group>"; };
 		0184A3AE139875180015368D /* libqphysicslib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libqphysicslib.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0184A3B3139875E50015368D /* qWorld.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = qWorld.cpp; sourceTree = "<group>"; };
+		0199DBEC139A8C7F000E65B0 /* qRigidBody.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = qRigidBody.cpp; sourceTree = "<group>"; };
 		01C16E19139928F00019D45E /* libqutillib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libqutillib.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -58,6 +62,7 @@
 			children = (
 				0184A3A8139874770015368D /* qPhysicsLib.h */,
 				0184A3A9139874E80015368D /* qWorld.h */,
+				0183D038139A8B6400F70CC3 /* qRigidBody.h */,
 			);
 			path = include;
 			sourceTree = "<group>";
@@ -66,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				0184A3B3139875E50015368D /* qWorld.cpp */,
+				0199DBEC139A8C7F000E65B0 /* qRigidBody.cpp */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -85,6 +91,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0183D039139A8B6400F70CC3 /* qRigidBody.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0184A3B4139875E50015368D /* qWorld.cpp in Sources */,
+				0199DBED139A8C7F000E65B0 /* qRigidBody.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,7 +180,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
-					"/usr/local/include/**",
+					/usr/local/include,
 					"$(SRCROOT)/../qScript/include/",
 					"$(SRCROOT)/../qUtil/include/",
 					"$(SRCROOT)/../qEvent/include/",
@@ -203,7 +211,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
-					"/usr/local/include/**",
+					/usr/local/include,
 					"$(SRCROOT)/../qScript/include/",
 					"$(SRCROOT)/../qUtil/include/",
 					"$(SRCROOT)/../qEvent/include/",

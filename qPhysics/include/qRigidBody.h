@@ -1,6 +1,6 @@
 /*
  *  qPhysics
- *  qPhysicsLib.h
+ *  qRigidBody.h
  *
  *	Copyright (c) 2001, AVS
  *	All rights reserved.
@@ -31,10 +31,47 @@
  *	SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef _qPhysicsLib_h
-#define _qPhysicsLib_h
+#ifndef _qRigidBody_h
+#define _qRigidBody_h
 
-#include "qWorld.h"
-#include "qRigidBody.h"
+#include <bullet/btBulletCollisionCommon.h>
+#include <bullet/btBulletDynamicsCommon.h>
 
+#include <bullet/LinearMath/btVector3.h>
+#include <bullet/LinearMath/btMatrix3x3.h>
+#include <bullet/LinearMath/btTransform.h>
+#include <bullet/LinearMath/btQuickprof.h>
+#include <bullet/LinearMath/btAlignedObjectArray.h>
+
+class	btDynamicsWorld;
+class	btRigidBody;
+class	btTypedConstraint;
+class	btBroadphaseInterface;
+class	btCollisionShape;
+class	btOverlappingPairCache;
+class	btCollisionDispatcher;
+class	btConstraintSolver;
+struct	btCollisionAlgorithmCreateFunc;
+class	btDefaultCollisionConfiguration;
+
+#include "qComponent.h"
+
+namespace qLib
+{
+	namespace Physics
+	{
+		class qRigidBody : public qLib::Util::qComponent
+		{
+		public:
+			qRigidBody();
+			qRigidBody(btCollisionShape *shape, btDefaultMotionState *state, btScalar mass = 0.f);
+			virtual ~qRigidBody(){};
+			
+			btRigidBody *getBody();
+			btTransform getTransformation();
+		//private:
+			btRigidBody *body;
+		};
+	}
+}
 #endif
