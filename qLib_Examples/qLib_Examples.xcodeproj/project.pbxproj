@@ -17,6 +17,7 @@
 		0196D0601390EC4A00B000E7 /* libqlib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0196D05F1390EC4A00B000E7 /* libqlib.a */; };
 		0196D0631390EFD500B000E7 /* example_2_register_variables.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0196D0611390EFD500B000E7 /* example_2_register_variables.cpp */; };
 		0196D0831390F32700B000E7 /* example_3_register_classes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0196D0811390F32700B000E7 /* example_3_register_classes.cpp */; };
+		01BAA54E139C3BF80063A8C7 /* example_7_physics_script_events.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01BAA54C139C3BF80063A8C7 /* example_7_physics_script_events.cpp */; };
 		01C16E4013992BDF0019D45E /* example_6_physics_simple.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01C16E3E13992BDF0019D45E /* example_6_physics_simple.cpp */; };
 		01CE8E98139404570091F377 /* example_5_events_script.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01CE8E96139404570091F377 /* example_5_events_script.cpp */; };
 		01D0E2101393EFF6003EE851 /* example_4_events_native.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01D0E20E1393EFF6003EE851 /* example_4_events_native.cpp */; };
@@ -49,6 +50,8 @@
 		0196D0621390EFD500B000E7 /* example_2_register_variables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = example_2_register_variables.h; sourceTree = "<group>"; };
 		0196D0811390F32700B000E7 /* example_3_register_classes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = example_3_register_classes.cpp; sourceTree = "<group>"; };
 		0196D0821390F32700B000E7 /* example_3_register_classes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = example_3_register_classes.h; sourceTree = "<group>"; };
+		01BAA54C139C3BF80063A8C7 /* example_7_physics_script_events.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = example_7_physics_script_events.cpp; sourceTree = "<group>"; };
+		01BAA54D139C3BF80063A8C7 /* example_7_physics_script_events.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = example_7_physics_script_events.h; sourceTree = "<group>"; };
 		01C16E3E13992BDF0019D45E /* example_6_physics_simple.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = example_6_physics_simple.cpp; sourceTree = "<group>"; };
 		01C16E3F13992BDF0019D45E /* example_6_physics_simple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = example_6_physics_simple.h; sourceTree = "<group>"; };
 		01CE8E96139404570091F377 /* example_5_events_script.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = example_5_events_script.cpp; sourceTree = "<group>"; };
@@ -87,6 +90,7 @@
 				012B9F7A13908D8C00D8BD95 /* example_4_events_native */,
 				012B9F7B13908D8C00D8BD95 /* example_5_events_script */,
 				01C16E3C13992BA60019D45E /* example_6_physics_simple */,
+				01BAA54A139C3BA70063A8C7 /* example_7_physics_script_events */,
 				0196D0501390EB4900B000E7 /* examples */,
 				012B9F851390940A00D8BD95 /* Products */,
 			);
@@ -163,6 +167,15 @@
 			name = Libraries;
 			sourceTree = "<group>";
 		};
+		01BAA54A139C3BA70063A8C7 /* example_7_physics_script_events */ = {
+			isa = PBXGroup;
+			children = (
+				01BAA54C139C3BF80063A8C7 /* example_7_physics_script_events.cpp */,
+				01BAA54D139C3BF80063A8C7 /* example_7_physics_script_events.h */,
+			);
+			path = example_7_physics_script_events;
+			sourceTree = "<group>";
+		};
 		01C16E3C13992BA60019D45E /* example_6_physics_simple */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +239,7 @@
 				01D0E2101393EFF6003EE851 /* example_4_events_native.cpp in Sources */,
 				01CE8E98139404570091F377 /* example_5_events_script.cpp in Sources */,
 				01C16E4013992BDF0019D45E /* example_6_physics_simple.cpp in Sources */,
+				01BAA54E139C3BF80063A8C7 /* example_7_physics_script_events.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

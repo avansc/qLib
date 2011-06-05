@@ -1,11 +1,12 @@
 //
-//  example_6_physics_simple.cpp
+//  example_7_physics_script_events.cpp
 //  qLib_Examples
 //
-//  Created by avansc on 6/3/11.
+//  Created by avansc on 6/5/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
-#include "example_6_physics_simple.h"
+
+#include "example_7_physics_script_events.h"
 
 #include <GLUT/GLUT.h>
 
@@ -56,8 +57,8 @@ static void proc_events()
 	{
 		//evt_reg->push_event(qLib::Event::qEvent(a, qLib::Event::KEY_DOWN, qLib::Event::EVENT_KEY));
 		qLib::Physics::qRigidBody *t  = new qLib::Physics::qRigidBody(new btBoxShape(btVector3(10.f,10.f,10.f)),
-																	new btDefaultMotionState(btTransform(btQuaternion(0,0,0,1),btVector3(100,300,0))),
-																			 1.0f);
+																	  new btDefaultMotionState(btTransform(btQuaternion(0,0,0,1),btVector3(100,300,0))),
+																	  1.0f);
 		
 		t->getBody()->setLinearFactor(btVector3(1,1,0));
 		t->getBody()->setAngularFactor(btVector3(0,0,1));
@@ -186,7 +187,7 @@ static void init(void)
 	
 	world->m_dynamicsWorld->addRigidBody(ball->getBody());
 	timer =	mach_absolute_time();
-
+	
 }
 
 static void destroy(void)
@@ -199,8 +200,8 @@ static void destroy(void)
 	body_list.clear();
 	delete world;
 }
-qLibExample example_7_physics_script_events = {
-	"Physics Script Events",
+qLibExample example_6_physics_simple = {
+	"Simple Physics",
 	init,
 	update,
 	destroy,
