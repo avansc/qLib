@@ -65,10 +65,12 @@ namespace qLib
 		public:
 			qRigidBody();
 			qRigidBody(btCollisionShape *shape, btDefaultMotionState *state, btScalar mass = 0.f);
-			virtual ~qRigidBody(){};
+			virtual ~qRigidBody(){ delete this->body;};
 			
 			btRigidBody *getBody();
 			btTransform getTransformation();
+			
+			void applyImpulse(float _x, float _y, float _z);
 		//private:
 			btRigidBody *body;
 		};

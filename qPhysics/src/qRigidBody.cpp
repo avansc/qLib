@@ -70,5 +70,19 @@ namespace qLib
 			this->body->getMotionState()->getWorldTransform(trans);
 			return trans;
 		}
+		
+		void qRigidBody::applyImpulse(float _x, float _y, float _z)
+		{
+			//this->body->applyImpulse(
+			btTransform trans;
+			this->body->getMotionState()->getWorldTransform(trans);
+			//this->body->applyForce(btVector3(_x, _y, _z), trans.getOrigin());
+			//this->body->applyImpulse(btVector3(_x, _y, _z), trans.getOrigin());
+			
+			btVector3 t(_x,_y,_z);
+			//t.rotate(btVector3(1,1,1), 15);
+			
+			this->body->applyCentralForce(t);
+		}
 	}
 }

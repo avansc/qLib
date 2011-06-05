@@ -16,13 +16,15 @@
 #include "qPhysicsLib.h"
 #include <mach/mach_time.h>
 
+#include <list>
+
 typedef struct mach_timebase_info	*mach_timebase_info_t;
 typedef struct mach_timebase_info	mach_timebase_info_data_t;
 
 ///////////////////////////////////////////////////
 qLib::Physics::qWorld *world;
-qLib::Physics::qRigidBody *ball;
 qLib::Physics::qRigidBody *plane;
+qLib::Physics::qRigidBody *ball;
 
 static int mx;
 static int my;
@@ -36,11 +38,17 @@ static int t = 0;
 
 uint64_t timer = 0;
 
+std::list<qLib::Physics::qRigidBody*> body_list;
+
 ///////////////////////////////////////////////////
 
 
 static void proc_events()
 {	
+	
+	if(keys['w'] == 1)
+		ball->applyImpulse(0, 100, 0);
+	
 	if(keys['q'] == 1)
 	{
 		//evt_reg->push_event(qLib::Event::qEvent(a, qLib::Event::KEY_DOWN, qLib::Event::EVENT_KEY));
@@ -51,6 +59,7 @@ static void proc_events()
 		t->getBody()->setLinearFactor(btVector3(1,1,0));
 		t->getBody()->setAngularFactor(btVector3(0,0,1));
 		world->m_dynamicsWorld->addRigidBody(t->getBody());
+		body_list.push_back(t);
 		
 	}
 	
@@ -91,28 +100,11 @@ static void draw(btTransform trans)
     glPopMatrix();
 }
 
-static void draw(int x, int y)
-{
-	//temp->
-	glColor3f(1.0f, 1.0f, 1.0f);
-	glPushMatrix();
-	
-    glTranslatef(x, y, 0);
-	glRotatef(15, 0,0,1);
-    glBegin(GL_QUADS);
-    glVertex2f(-10, -10);
-    glVertex2f(10, -10);
-    glVertex2f(10, 10);
-    glVertex2f(-10, 10);
-    glEnd();
-    glPopMatrix();
-}
-
 static void update(float dt)
 {
 	//glPushMatrix();
 	uint64_t res =  mach_absolute_time() - timer;
-	world->update(res/10000.0f);
+	world->update(res/1000.0f);
 	timer = mach_absolute_time();
 	
 	proc_events();
@@ -153,32 +145,38 @@ static void init(void)
 										  new btDefaultMotionState(btTransform(btQuaternion(0,0,0,1),btVector3(0,500,0))));
 	world->m_dynamicsWorld->addRigidBody(plane->getBody());
 	
-	/*plane = new qLib::Physics::qRigidBody(new btStaticPlaneShape(btVector3(0,1,0),1),
-										  new btDefaultMotionState(btTransform(btQuaternion(0,0,0,1),btVector3(0,-1,0))));
+	plane = new qLib::Physics::qRigidBody(new btStaticPlaneShape(btVector3(-1,0,0),1),
+										  new btDefaultMotionState(btTransform(btQuaternion(0,0,0,1),btVector3(600,0,0))));
 	world->m_dynamicsWorld->addRigidBody(plane->getBody());
 	
-	plane = new qLib::Physics::qRigidBody(new btStaticPlaneShape(btVector3(0,1,0),1),
-										  new btDefaultMotionState(btTransform(btQuaternion(0,0,0,1),btVector3(0,-1,0))));
-	world->m_dynamicsWorld->addRigidBody(plane->getBody());*/
+	plane = new qLib::Physics::qRigidBody(new btStaticPlaneShape(btVector3(1,0,0),1),
+										  new btDefaultMotionState(btTransform(btQuaternion(0,0,0,1),btVector3(10,0,0))));
+	world->m_dynamicsWorld->addRigidBody(plane->getBody());
 	
 	//----
 	
-	/*ball = new qLib::Physics::qRigidBody(new btBoxShape(btVector3(5.f,5.f,5.f)),
+	ball = new qLib::Physics::qRigidBody(new btBoxShape(btVector3(5.f,5.f,5.f)),
 										 new btDefaultMotionState(btTransform(btQuaternion(0,0,0,1),btVector3(100,300,0))),
 										 1.0f);
 	
 	ball->getBody()->setLinearFactor(btVector3(1,1,0));
 	ball->getBody()->setAngularFactor(btVector3(0,0,1));
 	
-	world->m_dynamicsWorld->addRigidBody(ball->getBody());*/
+	world->m_dynamicsWorld->addRigidBody(ball->getBody());
 	timer =	mach_absolute_time();
 
 }
 
 static void destroy(void)
 {
+	std::list<qLib::Physics::qRigidBody*>::iterator it;
+	for(it = body_list.begin();it != body_list.end();it++)
+	{
+		delete *it;
+	}
+	body_list.clear();
+	delete world;
 }
-
 qLibExample example_6_physics_simple = {
 	"Simple Physics",
 	init,
