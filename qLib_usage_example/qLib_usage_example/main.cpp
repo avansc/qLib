@@ -43,7 +43,7 @@
 #include "qScriptEngine.h"
 #include "qScriptModule.h"
 
-class player : public qLib::Util::qComponent
+class player : public qLib::Util::qObject
 {
 public:
 	player();

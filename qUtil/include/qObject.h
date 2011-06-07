@@ -50,13 +50,20 @@ namespace qLib
 		public:
 			qObject();
 			qObject(qObjectType type);
-			virtual ~qObject() {};
+			virtual ~qObject();
 			
 			qObjectType type() const { return this->_type; }
 			
+			qObject		*getRoot();
+			void		setRoot(qObject *_root);
+			qObject		*getComp(std::string comp);
+			bool		addComp(std::string comp, qObject *it);
+		
 			virtual void REGISTER_SCRIPTABLES(qScriptEngine *engine);
 		protected:
 			qObjectType _type;
+			qObject								*root;
+			std::map<std::string, qObject*>		comps;
 		};
 	}
 }

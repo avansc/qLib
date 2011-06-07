@@ -37,6 +37,6 @@
 #include "qUtilLibDeps.h"
 
 #include "qObject.h"
-#include "qComponent.h"
+//#include "qComponent.h"
 
 #endif

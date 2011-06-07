@@ -7,21 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		015B28A3138ECE4C0059AF3F /* qComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 015B289C138ECE4C0059AF3F /* qComponent.h */; };
 		015B28A4138ECE4C0059AF3F /* qObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 015B289D138ECE4C0059AF3F /* qObject.h */; };
 		015B28A5138ECE4C0059AF3F /* qUtilLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 015B289E138ECE4C0059AF3F /* qUtilLib.h */; };
 		015B28A6138ECE4C0059AF3F /* qUtilLibDeps.h in Headers */ = {isa = PBXBuildFile; fileRef = 015B289F138ECE4C0059AF3F /* qUtilLibDeps.h */; };
-		015B28A7138ECE4C0059AF3F /* qComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 015B28A1138ECE4C0059AF3F /* qComponent.cpp */; };
 		015B28A8138ECE4C0059AF3F /* qObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 015B28A2138ECE4C0059AF3F /* qObject.cpp */; };
 		015B28AA138ECE5F0059AF3F /* libqscriptlib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 015B28A9138ECE5F0059AF3F /* libqscriptlib.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		015B289C138ECE4C0059AF3F /* qComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qComponent.h; sourceTree = "<group>"; };
 		015B289D138ECE4C0059AF3F /* qObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qObject.h; sourceTree = "<group>"; };
 		015B289E138ECE4C0059AF3F /* qUtilLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qUtilLib.h; sourceTree = "<group>"; };
 		015B289F138ECE4C0059AF3F /* qUtilLibDeps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qUtilLibDeps.h; sourceTree = "<group>"; };
-		015B28A1138ECE4C0059AF3F /* qComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = qComponent.cpp; sourceTree = "<group>"; };
 		015B28A2138ECE4C0059AF3F /* qObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = qObject.cpp; sourceTree = "<group>"; };
 		015B28A9138ECE5F0059AF3F /* libqscriptlib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libqscriptlib.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		018821FD138ECD8700A54F53 /* libqutillib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libqutillib.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,7 +38,6 @@
 		015B289B138ECE4C0059AF3F /* include */ = {
 			isa = PBXGroup;
 			children = (
-				015B289C138ECE4C0059AF3F /* qComponent.h */,
 				015B289D138ECE4C0059AF3F /* qObject.h */,
 				015B289E138ECE4C0059AF3F /* qUtilLib.h */,
 				015B289F138ECE4C0059AF3F /* qUtilLibDeps.h */,
@@ -53,7 +48,6 @@
 		015B28A0138ECE4C0059AF3F /* src */ = {
 			isa = PBXGroup;
 			children = (
-				015B28A1138ECE4C0059AF3F /* qComponent.cpp */,
 				015B28A2138ECE4C0059AF3F /* qObject.cpp */,
 			);
 			path = src;
@@ -84,7 +78,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				015B28A3138ECE4C0059AF3F /* qComponent.h in Headers */,
 				015B28A4138ECE4C0059AF3F /* qObject.h in Headers */,
 				015B28A5138ECE4C0059AF3F /* qUtilLib.h in Headers */,
 				015B28A6138ECE4C0059AF3F /* qUtilLibDeps.h in Headers */,
@@ -138,7 +131,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				015B28A7138ECE4C0059AF3F /* qComponent.cpp in Sources */,
 				015B28A8138ECE4C0059AF3F /* qObject.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

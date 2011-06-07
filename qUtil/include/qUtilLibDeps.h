@@ -61,7 +61,7 @@ namespace qLib
 		
 		
 		class qObject;
-		class qComponent;
+		//class qComponent;
 		
 		typedef qLib::Script::iScriptable<qObject> qObject_td;
 	}

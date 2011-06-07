@@ -34,7 +34,7 @@
 #ifndef _qEventHandler_h
 #define	_qEventHandler_h
 
-#include "qComponent.h"
+#include "qObject.h"
 
 namespace qLib
 {
@@ -43,7 +43,7 @@ namespace qLib
 		class qEvent;
 		class qObject;
 
-		class qEventHandler : public qLib::Util::qComponent
+		class qEventHandler : public qLib::Util::qObject
 		{
 		public:
 			qEventHandler();

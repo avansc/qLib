@@ -49,11 +49,13 @@ void player::setDir(int _dx, int _dy)
 void player::REGISTER_SCRIPTABLES(qScriptEngine *engine)
 {
 	//deps//
-	engine->RegisterScriptable<qLib::Util::qObject>();
+	//engine->RegisterScriptable<qLib::Util::qObject>();
 	////////
 	
 	REGISTER_CLASS(engine, "player", player);
 	
+	
+	REGISTER_METHOD(engine, "player", player, "void render()", getX);
 	
 	REGISTER_METHOD(engine, "player", player, "float getX(void)", getX);
 	REGISTER_METHOD(engine, "player", player, "float getY(void)", getY);

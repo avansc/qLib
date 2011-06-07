@@ -34,7 +34,7 @@
 #ifndef _qEventMonitor_h
 #define	_qEventMonitor_h
 
-#include "qComponent.h"
+//#include "qComponent.h"
 #include "qEventHandler.h"
 #include "qEventListener.h"
 #include "qEvent.h"

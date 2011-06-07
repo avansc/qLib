@@ -37,7 +37,7 @@
 #include <map>
 #include <vector>
 
-#include "qComponent.h"
+//#include "qComponent.h"
 
 #include "qEvent.h"
 
@@ -47,7 +47,7 @@ namespace qLib
 {
 	namespace Util
 	{
-		class qComponent;
+	//	class qComponent;
 	}
 	
 	namespace Event
@@ -70,7 +70,7 @@ namespace qLib
 			
 			void process_events();
 			
-			bool register_pair(qEventListener *L, qEventHandler *H, qLib::Util::qComponent *comp);
+			bool register_pair(qEventListener *L, qEventHandler *H, qLib::Util::qObject *comp);
 
 		private:
 			listener_multimap listeners;

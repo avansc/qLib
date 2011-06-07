@@ -49,7 +49,7 @@ static void proc_events()
 	if(keys['w'] == 1)
 	{
 		ball->body->activate();
-		ball->applyImpulse(0, 100, 0);
+		ball->applyImpulse(0, 200, 0);
 	}
 	
 	if(keys['q'] == 1)
@@ -136,7 +136,7 @@ static void update(float dt)
 	for(int i=4;i<numObjects;i++)
 	{
 		btCollisionObject*	colObj=world->m_dynamicsWorld->getCollisionObjectArray()[i];
-		printf("%f\n", center.getX());
+		//printf("%f\n", center.getX());
 		btRigidBody*		body=btRigidBody::upcast(colObj);
 		body->getMotionState()->getWorldTransform(trans);
 		//glRotatef(15, 0,0,1);
@@ -145,7 +145,7 @@ static void update(float dt)
 		//trans.getRotation().getAxis();
 		//glTranslatef(trans.getOrigin().getX(), trans.getOrigin().getY(), 0);
 		draw(trans);
-		draw_bounding_sphere(center, rad);
+		//draw_bounding_sphere(center, rad);
 		glPopMatrix();
 		//char data[200];
 		//sprintf(data, "pos = <%f,%f>", plr->getX(), plr->getY());
@@ -199,8 +199,8 @@ static void destroy(void)
 	body_list.clear();
 	delete world;
 }
-qLibExample example_7_physics_script_events = {
-	"Physics Script Events",
+qLibExample example_6_physics_simple = {
+	"Simple Physics",
 	init,
 	update,
 	destroy,

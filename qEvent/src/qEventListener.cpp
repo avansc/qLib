@@ -57,7 +57,8 @@ namespace qLib
 
 		void qEventListener::ON_EVENT(const qEvent &_evt)
 		{
-			qComponent *H = this->getRoot()->getComp("event_handler");
+			std::string t("event_handler");
+			qObject *H = this->getRoot()->getComp(t);
 			if(H)
 				((qEventHandler*)H)->ON_EVENT(_evt);
 			else

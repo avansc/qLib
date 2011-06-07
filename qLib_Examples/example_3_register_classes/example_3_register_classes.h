@@ -11,12 +11,14 @@
 
 #include "qLib.h"
 
-class player : public qLib::Util::qComponent
+class player : public qLib::Util::qObject
 {
 public:
 	player();
 	player(const float &_x, const float &_y);
 	virtual ~player(){};
+	
+	virtual void render(){};
 	
 	float getX() { return this->x; }
 	float getY() { return this->y; }

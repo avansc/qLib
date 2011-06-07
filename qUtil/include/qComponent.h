@@ -55,6 +55,7 @@ namespace qLib
 			void			setRoot(qComponent *_root);
 			qComponent		*getComp(std::string comp);
 			bool			addComp(std::string comp, qComponent *it);
+			static qComponent *convert(qLib::Util::qObject *ref);
 			
 			virtual void REGISTER_SCRIPTABLES(qScriptEngine *engine);
 			

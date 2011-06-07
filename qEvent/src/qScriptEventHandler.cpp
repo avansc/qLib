@@ -54,6 +54,8 @@ namespace qLib
 				return;
 			}
 			
+			printf("call\n");
+			
 			// Script call goes here.
 			//this->on_event_ptr(_evt, _obj);
 			exe->ctx->SetArgObject(0, (void*)&_evt);

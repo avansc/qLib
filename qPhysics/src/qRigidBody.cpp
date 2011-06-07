@@ -83,6 +83,34 @@ namespace qLib
 			//t.rotate(btVector3(1,1,1), 15);
 			
 			this->body->applyCentralForce(t);
+			 
 		}
+		
+		bool qRigidBody::isActive()
+		{
+			return this->body->isActive();
+		}
+		
+		qRigidBody *qRigidBody::convert(qLib::Util::qObject *ref)
+		{
+			//&output = static_cast<player*>(&ref);
+			//&output = (player*)&ref;
+			return (qRigidBody*)ref;
+		}
+		
+		void qRigidBody::REGISTER_SCRIPTABLES(qScriptEngine *engine)
+		{
+			
+			engine->RegisterScriptable<qObject>();
+			
+			REGISTER_CLASS(engine, "qRigidBody", qRigidBody);
+			
+			REGISTER_METHOD(engine, "qRigidBody", qRigidBody, "void applyImpulse(float x, float y, float z)", applyImpulse);
+			
+			REGISTER_METHOD(engine, "qRigidBody", qRigidBody, "bool isActive()", isActive);
+			
+			REGISTER_GLOBAL_FUNCTION(engine, "qRigidBody@ qRigidBody_convert(qObject@)", qRigidBody::convert);
+		}
+		
 	}
 }

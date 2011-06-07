@@ -54,13 +54,13 @@ class	btConstraintSolver;
 struct	btCollisionAlgorithmCreateFunc;
 class	btDefaultCollisionConfiguration;
 
-#include "qComponent.h"
+#include "qObject.h"
 
 namespace qLib
 {
 	namespace Physics
 	{
-		class qRigidBody : public qLib::Util::qComponent
+		class qRigidBody : public qLib::Util::qObject
 		{
 		public:
 			qRigidBody();
@@ -71,6 +71,10 @@ namespace qLib
 			btTransform getTransformation();
 			
 			void applyImpulse(float _x, float _y, float _z);
+			bool isActive();
+			static qRigidBody *convert(qLib::Util::qObject *ref);
+			
+			void REGISTER_SCRIPTABLES(qScriptEngine *engine);
 		//private:
 			btRigidBody *body;
 		};

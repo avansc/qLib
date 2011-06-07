@@ -90,7 +90,7 @@ int qScriptModule::addSectionFromFile(char *_file)
 	script.resize(len);
 	int c =	fread(&script[0], len, 1, f);
 	fclose(f);
-	free(_file);
+	//free(_file);
 	
 	if( c == 0 ) 
 	{
@@ -105,6 +105,8 @@ int qScriptModule::addSectionFromFile(char *_file)
 		printf("AddScriptSection() failed\n");
 		return -1;
 	}
+	printf("script loaded succesfully : \n%s\n", &script[0]);
+	return 1;
 }
 
 int qScriptModule::buildScript()

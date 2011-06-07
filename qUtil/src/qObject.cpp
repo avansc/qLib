@@ -33,6 +33,7 @@
 
 #include "qObject.h"
 
+//#include "qComponent.h"
 
 namespace qLib
 {
@@ -47,10 +48,48 @@ namespace qLib
 		:	_type(type)
 		{
 		}
-
+		
+		qObject::~qObject()
+		{
+			std::map<std::string, qObject* >::iterator it;
+			
+			for(it = this->comps.begin();it != comps.end();it++)
+				delete it->second;
+		}
+		
+		void qObject::setRoot(qObject *_root)
+		{
+			this->root = _root;
+		}
+		
+		qObject *qObject::getRoot()
+		{
+			return this->root;
+		}
+		
+		qObject	*qObject::getComp(std::string comp)
+		{
+			return this->comps[comp];
+		}
+		
+		bool qObject::addComp(std::string comp, qObject *it)
+		{
+			it->root = this;
+			this->comps[comp] = it;
+			return true;
+		}
+		
+		
 		void qObject::REGISTER_SCRIPTABLES(qScriptEngine *engine)
 		{
 			REGISTER_CLASS(engine, "qObject", qObject);
+			
+			int r = engine->getEngine()->RegisterObjectMethod("qObject", "qObject &opAssign(const qObject &in)", asMETHODPR(qObject, operator =, (const qObject&), qObject&), asCALL_THISCALL); assert( r >= 0 );
+			
+			REGISTER_METHOD(engine, "qObject", qObject, "bool addComp(string &comp, qObject &it)", addComp);
+			REGISTER_METHOD(engine, "qObject", qObject, "qObject@ getComp(string &comp)", getComp);
+			
+			//REGISTER_GLOBAL_FUNCTION(engine, "qObject@ qComponent_convert(qObject@)", qComponent::convert);
 		}
 	}
 }

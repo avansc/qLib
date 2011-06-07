@@ -34,7 +34,7 @@
 #ifndef _qEventListener_h
 #define	_qEventListener_h
 
-#include "qComponent.h"
+//#include "qComponent.h"
 
 #include "qEventHandler.h"
 #include "qEvent.h"
@@ -43,7 +43,7 @@ namespace qLib
 {
 	namespace Event
 	{
-		class qEventListener : public qLib::Util::qComponent//public qComponent
+		class qEventListener : public qLib::Util::qObject//public qComponent
 		{
 		public:
 			qEventListener();

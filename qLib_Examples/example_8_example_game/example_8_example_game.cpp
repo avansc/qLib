@@ -1,12 +1,13 @@
 //
-//  example_5_events_script.cpp
+//  example_8_example_game.cpp
 //  qLib_Examples
 //
-//  Created by avansc on 5/30/11.
+//  Created by avansc on 6/6/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#include "example_5_events_script.h"
+#include "example_8_example_game.h"
+
 
 #include <GLUT/GLUT.h>
 
@@ -38,49 +39,6 @@ extern char keys[255];
 static qLib::Script::qScriptEngine *engine;
 static qLib::Script::qScriptModule *mod;
 static qLib::Script::qScriptExec *exe;
-
-static const char *script =
-"enum KEYS"
-"{"
-"a = 97,"
-"b,"
-"c,"
-"d,"
-"e,"
-"f,"
-"g,"
-"h,"
-"i,"
-"j,"
-"k,"
-"l,"
-"m,"
-"n,"
-"o,"
-"p,"
-"q,"
-"r,"
-"s,"
-"t,"
-"u,"
-"v,"
-"w,"
-"x,"
-"y,"
-"z"
-"}"
-"void ON_EVENT(qEvent &evt, qObject &obj)		"
-"{												"
-"												"
-"	player@ ref = player_convert(obj);			"
-"	switch(evt.get_key_code())					"
-"	{											"
-"		case KEYS::a :{ref.setDir(-1,0); ref.move(1); break;}"
-"		case KEYS::d :{ref.setDir(1,0); ref.move(1); break;}	"
-"		case KEYS::s :{ref.setDir(0,-1); ref.move(1); break;}"
-"		case KEYS::w :{ref.setDir(0,1); ref.move(1); break;}	"
-"	}											"
-"}												";
 
 static void proc_events()
 {	
@@ -129,19 +87,15 @@ static void draw(int x, int y)
 static void update(float dt)
 {
 	proc_events();
-	
-	draw(plr->getX(), plr->getY());
-	
-	char data[200];
-	sprintf(data, "pos = <%f,%f>", plr->getX(), plr->getY());
-	drawString(10, 10, data);
 }
 
 static void init(void)
 {	
+	evt_reg = new qLib::Event::qEventRegistry();
+	/*
 	engine = new qLib::Script::qScriptEngine();
-	engine->RegisterScriptable<qLib::Util::qObject>();
 	engine->RegisterScriptable<player>();
+	engine->RegisterScriptable<qLib::Util::qObject>();
 	engine->RegisterScriptable<qLib::Event::qEvent>();
 	
 	mod = engine->pGetScriptModule("event");
@@ -163,22 +117,22 @@ static void init(void)
 	plr = new player(100, 100);
 	plr->setDir(1, 1);
 	
-	evt_reg = new qLib::Event::qEventRegistry();
 	qLib::Event::qEventListener *L = new qLib::Event::qKeyEventListener();
 	qLib::Event::qEventHandler *H = new qLib::Event::qScriptEventHandler();
 	((qLib::Event::qScriptEventHandler*)H)->set_script_exe(exe);
 	
 	evt_reg->register_pair(L, H, plr);
+	*/
 	
 }
 
 static void destroy(void)
 {
-	delete plr;
+	//delete plr;
 }
 
-qLibExample example_5_events_script = {
-	"Script Events",
+qLibExample example_8_example_game = {
+	"Example Game",
 	init,
 	update,
 	destroy,

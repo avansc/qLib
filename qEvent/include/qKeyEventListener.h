@@ -34,7 +34,7 @@
 #ifndef _qKeyEventListener_h
 #define	_qKeyEventListener_h
 
-#include "qComponent.h"
+//#include "qComponent.h"
 #include "qEventHandler.h"
 #include "qEventListener.h"
 #include "qEvent.h"

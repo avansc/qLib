@@ -94,14 +94,14 @@ namespace qLib
 			this->buffer_count = 0;
 		}
 
-		bool qEventRegistry::register_pair(qEventListener *L, qEventHandler *H, qLib::Util::qComponent *comp)
+		bool qEventRegistry::register_pair(qEventListener *L, qEventHandler *H, qLib::Util::qObject *comp)
 		{
 			// set the root of the listener and handler to the listening object
-			((qLib::Util::qComponent*)L)->setRoot(comp);
-			((qLib::Util::qComponent*)H)->setRoot(comp);
+			((qLib::Util::qObject*)L)->setRoot(comp);
+			((qLib::Util::qObject*)H)->setRoot(comp);
 			// add listener and handler as components to the listening object
-			comp->addComp("event_listener", (qLib::Util::qComponent*)L);
-			comp->addComp("event_handler", (qLib::Util::qComponent*)H);
+			comp->addComp("event_listener", (qLib::Util::qObject*)L);
+			comp->addComp("event_handler", (qLib::Util::qObject*)H);
 			
 			// get multimap with type of the listener
 			multimap<unsigned int, qEventListener*> t = this->listener_map.find(L->listener_type())->second;

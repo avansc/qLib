@@ -78,6 +78,13 @@ namespace qLib
 			this->comps[comp] = it;
 			return true;
 		}
+		
+		qComponent *qComponent::convert(qLib::Util::qObject *ref)
+		{
+			//&output = static_cast<player*>(&ref);
+			//&output = (player*)&ref;
+			return (qComponent*)ref;
+		}
 
 		void qComponent::REGISTER_SCRIPTABLES(qScriptEngine *engine)
 		{
@@ -89,6 +96,8 @@ namespace qLib
 			
 			REGISTER_METHOD(engine, "qComponent", qComponent, "bool addComp(string &comp, qComponent &it)", addComp);
 			REGISTER_METHOD(engine, "qComponent", qComponent, "qComponent &getComp(string &comp)", getComp);
+			
+			REGISTER_GLOBAL_FUNCTION(engine, "qComponent@ qComponent_convert(qObject@)", qComponent::convert);
 		}
 	}
 }
